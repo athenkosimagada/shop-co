@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet&family=Open+Sans&display=swap');
+
+.discount {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    background: #000000;
+    color: #FFFFFF;
+    height: 38px;
+
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 6rem;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.link {
+    color: #FFFFFF;
+    font-weight: bold;
+}
