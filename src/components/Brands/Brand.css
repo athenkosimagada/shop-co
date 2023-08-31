@@ -1,0 +1,11 @@
+.brand {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.4rem 6rem;
+    background: #000000;
+}
+
+.brand img {
+    width: 100px;
+    height: 30px;
+}
