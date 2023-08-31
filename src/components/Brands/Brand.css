@@ -1,11 +1,24 @@
 .brand {
     display: flex;
+    gap: 1rem;
     justify-content: space-between;
-    padding: 1.4rem 6rem;
+    padding: 1.34rem 5%;
     background: #000000;
 }
 
 .brand img {
-    width: 100px;
-    height: 30px;
+    width: 80px;
+    height: 100%
 }
+
+@media screen and (max-width: 650px) {
+    .brand {
+     flex-wrap: wrap;
+     align-items: center;
+    }
+
+    .brand img {
+        margin-inline: auto;
+    }
+
+ }

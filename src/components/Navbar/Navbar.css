@@ -1,5 +1,5 @@
 .navbar {
-    padding: 1rem 6rem;
+    padding: 1rem 5%;
 }
 
 .nav-content {
@@ -8,32 +8,37 @@
 }
 
 .nav-left {
+    flex: 1;
     display: flex;
-    gap: 21px;
+    gap: 1.31rem;
 }
 
 .nav-left h2 {
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 900;
 }
 
-.nav-links {
+.nav-links, .show {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
 }
 
-.nav-links > li {
-    list-style: none;
+.nav-links > a, .show > a {
+    text-decoration: none;
+    color: #000000;
 }
 
-.nav-links li > i {
-    margin-left: 5px;
-    font-size: 14px;
+.close-menu {
+    font-size: 32px;
+    display: none;
 }
 
 .nav-right {
+    flex: 1;
+    justify-content: flex-end;
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -41,6 +46,7 @@
 
 .seach-bar {
     position: relative;
+    flex: 1;
 }
 
 .seach-bar input {
@@ -50,7 +56,7 @@
     background: #F0F0F0;
     padding: 12px 16px;
     padding-left: 40px;
-    width: 450px;
+    width: 90%;
 }
 
 .seach-bar i {
@@ -67,4 +73,74 @@
 
 .icons i {
     cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    .nav-left {
+        position: relative;
+    }
+
+    .nav-right {
+        flex: 2;
+    }
+
+    .hamburger {
+        display: flex;
+        align-items: center;
+        font-size: 30px;
+    }
+
+    .nav-links {
+        display: none;
+        height: 0;
+        transition: all 0.5s ease;
+    }
+
+    .show {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        position: absolute;
+        top: 3.5rem;
+        left: 0;
+        background: #FFFFFF;
+        flex-direction: column;
+        width: 200px;
+        height: 200px;
+        border-radius: 4px;
+        box-shadow: 2px 4px 4px rgba(174, 174, 174, 0.5);
+        z-index: 1000;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .nav-right {
+        gap: 1em;
+    }
+
+    .seach-bar {
+        flex: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .seach-bar input {
+        display: none;
+    }
+
+    .seach-bar i {
+        position: relative;
+        inset: 0;
+        color: #000;
+        cursor: pointer;
+    }
 }

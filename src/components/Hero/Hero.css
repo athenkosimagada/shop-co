@@ -1,6 +1,6 @@
 .hero {
     background: #F0F0F0;
-    padding: 3rem 6rem;
+    padding: 3rem 5%;
     padding-bottom: 0;
 
     display: flex;
@@ -15,7 +15,7 @@
 
 .hero-content h1 {
     font-size: 64px;
-    width: 80%;
+    width: 600px;
     line-height: 54px;
 }
 
@@ -37,13 +37,62 @@
 .hero-img img {
     width: 410px;
     height: 100%;
+    object-fit: cover;
+    object-position: center center;
 }
 
 .numbers {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    width: 95%;
 }
 
 .numbers-item h2{
     font-size: 40px;
+}
+
+@media screen and (max-width: 1100px) {
+    .hero {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-content p {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .hero-content h1 {
+        font-size: 36px;
+        width: 300px;
+    }
+    .hero-content p {
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .button {
+        padding: 0.8rem 0;
+        width: 100%;
+    }
+
+    .numbers {
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+    }
+
+    .numbers-item {
+        margin-inline: auto;
+    }
+    
+    .numbers-item h2{
+        font-size: 24px;
+    }
+
+    .numbers-item p {
+        font-size: 10px;
+    }
 }
