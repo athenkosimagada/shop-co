@@ -3,6 +3,7 @@ import Discount from "./components/Discount/Discount";
 import './App.css';
 import Header from "./containers/Header/Header";
 import Brand from "./components/Brands/Brand";
+import New from "./containers/New/New";
 
 const App = () => {
     return (
@@ -10,6 +11,7 @@ const App = () => {
             <Discount />
             <Header />
             <Brand />
+            <New />
         </div>
     );
 }

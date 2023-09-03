@@ -27,6 +27,8 @@ const Hero = () => {
             </div>
             <div className="hero-img">
                 <img src={images.hero} alt="Hero Image"/>
+                <img id='vector1' src={images.vector1} alt="Hero Image"/>
+                <img id='vector2'src={images.vector2} alt="Hero Image"/>
             </div>
         </div>
     );

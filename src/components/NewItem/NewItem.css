@@ -1,0 +1,26 @@
+.new-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.new-item > p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.rate {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rate > p {
+    font-size: 14px;
+}
+
+.star-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

@@ -22,3 +22,15 @@
     color: #FFFFFF;
     font-weight: bold;
 }
+
+@media screen and (max-width: 490px) {
+    .discount {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .discount {
+        font-size: 8px;
+    }
+}
