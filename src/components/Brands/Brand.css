@@ -7,6 +7,8 @@
     padding: 1.34rem 5%;
     background: #000000;
     flex-wrap: wrap;
+    margin-top: -3px;
+    z-index: 2;
 }
 
 .brand img {
