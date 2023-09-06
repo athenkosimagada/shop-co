@@ -97,7 +97,7 @@
 
 @media screen and (max-width: 650px) {
     .hero-content {
-        padding: 1rem 0;
+        padding: 3rem 0;
     }
     .hero-content h1 {
         font-size: 36px;
@@ -126,7 +126,7 @@
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 350px) {
     .numbers {
         justify-content: center;
     }
