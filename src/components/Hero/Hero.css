@@ -86,12 +86,19 @@
         margin-right: 0;
     }
 
+    .hero-content {
+        padding: 3rem 0;
+    }
+
     .hero-content p {
         width: 85%;
     }
 }
 
 @media screen and (max-width: 650px) {
+    .hero-content {
+        padding: 1rem 0;
+    }
     .hero-content h1 {
         font-size: 36px;
         width: 300px;

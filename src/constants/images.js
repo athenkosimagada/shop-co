@@ -14,10 +14,13 @@ import frame42 from '../assets/Frame 42.png';
 import frame43 from '../assets/Frame 43.png';
 import vector1 from '../assets/Vector 1.png';
 import vector2 from '../assets/Vector 2.png';
+import casual from '../assets/casual.png';
+import formal from '../assets/formal.png';
+import party from '../assets/party.png';
+import gym from '../assets/gym.png';
 
 
-
-export default {
+const images = {
     hero,
     versace,
     zara,
@@ -34,4 +37,9 @@ export default {
     frame43,
     vector1,
     vector2,
+    casual,
+    formal,
+    party,
+    gym
 };
+export default images;

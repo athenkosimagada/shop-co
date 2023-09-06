@@ -13,8 +13,8 @@ const App = () => {
             <Discount />
             <Header />
             <Brand />
-            <New key={1} data={data.arrivals} topic="NEW ARRIVALS"/>
-            <New key={2} data={data.top} topic="TOP SELLING"/>
+            <New key={1} data={data.arrivals} topic="NEW ARRIVALS" value={true}/>
+            <New key={2} data={data.top} topic="TOP SELLING" value={false}/>
             <Browse />
         </div>
     );

@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import './New.css';
 import NewItem from "../../components/NewItem/NewItem";
 
-const New = ({ data, topic }) => {
+const New = ({ data, topic, value }) => {
     const [pressed, setPressed] = useState(false);
     function handClick(){
         setPressed(!pressed);
     }
+
+    const borderStyle = value ? { borderBottom: '1px solid #a9a9a9' } : {};
     return (
         <div className="new">
             <h1>{topic}</h1>
-            <div className="new-content">
+            <div style={borderStyle} className="new-content">
                 <div className={pressed ? "show-all" : "new-arrivals"}>
                     {data.map((item, index) => (
                     <NewItem key={item + index} imgUrl={item.imgUrl} title={item.title} price={item.price} rate={item.rate} discount={item.discount}/>
