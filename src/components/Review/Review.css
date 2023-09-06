@@ -5,6 +5,10 @@
     border: 1px solid #aaaaaa;
     border-radius: 20px;
     padding: 1.5rem;
+    margin-right: 1rem;
+    flex: 1;
+    margin-bottom: 2rem;
+    height: 100%;
 }
 
 .review i {
