@@ -1,0 +1,13 @@
+.review {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border: 1px solid #aaaaaa;
+    border-radius: 20px;
+    padding: 1.5rem;
+}
+
+.review i {
+    color: #01AB31;
+    margin-left: 8px;
+}
