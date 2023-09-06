@@ -6,6 +6,8 @@
     display: flex;
     justify-content: space-between;
     min-height: 82.29vh;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content {
@@ -115,7 +117,19 @@
 
     .hero-img img {
         width: 100%;
-    }    
+    }   
+    
+    #vector1 {
+        left: 0;
+        top: 12rem;
+        width: 30px;
+    }
+    
+    #vector2 {
+        right: -1rem;
+        top: 2rem;
+        width: 60px;
+    }
 
     .numbers-item h2{
         font-size: 24px;

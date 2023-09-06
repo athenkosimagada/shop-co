@@ -8,7 +8,7 @@
     background: #000000;
     flex-wrap: wrap;
     margin-top: -5px;
-    z-index: 2;
+    z-index: 3;
 }
 
 .brand img {

@@ -16,6 +16,10 @@ body {
     align-items: center;
 }
 
+.app {
+    position: relative;
+}
+
 .app .new {
     border-bottom: none;
 }
