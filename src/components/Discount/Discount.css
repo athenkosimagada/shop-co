@@ -29,7 +29,7 @@
     }
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 480px) {
     .discount {
         font-size: 8px;
     }

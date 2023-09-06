@@ -126,7 +126,7 @@
     }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 480px) {
     .numbers {
         justify-content: center;
     }

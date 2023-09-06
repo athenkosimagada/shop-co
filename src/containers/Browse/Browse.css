@@ -88,7 +88,7 @@
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 480px) {
     .style h2 {
         font-size: 24px;
     }
