@@ -12,9 +12,44 @@
 
 .new-arrivals {
     display: flex;
-    flex-wrap: wrap;
     flex-shrink: 0;
     flex-grow: 0;
     align-items: center;
     gap: 1rem;
+
+    overflow: hidden;
+}
+
+.show-all {
+    display: flex;
+    flex-shrink: 0;
+    flex-grow: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.new-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-bottom: 1px solid #a9a9a9;
+    padding-bottom: 3rem;
+}
+
+.view-button {
+    width: 150px;
+    height: 45px;
+    border: 1px solid #8c8c8c;
+    border-radius: 62px;
+    background: transparent;
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

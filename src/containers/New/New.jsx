@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import './New.css';
 import NewItem from "../../components/NewItem/NewItem";
-import { images } from '../../constants';
 
-const New = () => {
+const New = ({ data, topic }) => {
+    const [pressed, setPressed] = useState(false);
+    function handClick(){
+        setPressed(!pressed);
+    }
     return (
         <div className="new">
-            <h1>NEW ARRIVALS</h1>
-            <div className="new-arrivals">
-                <NewItem item={images.frame32} title="T-shirt with Tape Details" price="$120" rate={4.3}/>
-                <NewItem item={images.frame33} title="Skinny Fit Jeans" price="$240" rate={5}/>
-                <NewItem item={images.frame34} title="Checkered Shirt" price="$180" rate={4}/>
-                <NewItem item={images.frame38} title="Sleeve Striped T-shirt" price="$130" rate={3.5}/>
+            <h1>{topic}</h1>
+            <div className="new-content">
+                <div className={pressed ? "show-all" : "new-arrivals"}>
+                    {data.map((item, index) => (
+                    <NewItem key={item + index} imgUrl={item.imgUrl} title={item.title} price={item.price} rate={item.rate} discount={item.discount}/>
+                    ))}
+                </div>
+                <div className="bottom">
+                    <button className="view-button" type="button" onClick={handClick}>View All</button>
+                </div>
             </div>
         </div>
     );

@@ -2,7 +2,7 @@ import React from "react";
 import './NewItem.css';
 import { FaStar } from 'react-icons/fa';
 
-const NewItem = ({ item, title, price, rate }) => {
+const NewItem = ({ imgUrl, title, price, rate, discount }) => {
   // Calculate the number of full stars and the decimal part
   const fullStars = Math.floor(rate);
   const decimalPart = rate - fullStars;
@@ -33,13 +33,24 @@ const NewItem = ({ item, title, price, rate }) => {
 
   return (
     <div className="new-item">
-      <img src={item} alt="Clothes" />
+      <img src={imgUrl} alt="Clothes" />
       <p>{title}</p>
       <div className="rate">
         <div className="star-rating">{stars}</div>
         <p>{rate.toFixed(1)}/5</p>
       </div>
-      <h3>{price}</h3>
+      <div className="price">
+        {discount ? (
+          <>
+            <h3>${(price - price * discount).toFixed(2)}</h3>
+            <h3 className="original">${price.toFixed(2)}</h3>
+            <p className="discount-price">{-(discount * 100).toFixed(0)}%</p>
+          </>
+        ) : (
+            <h3>${price.toFixed(2)}</h3>
+        )}
+      </div>
+      
     </div>
   );
 }

@@ -24,3 +24,21 @@
     align-items: center;
     gap: 5px;
 }
+
+.price {
+    display: flex;
+    gap: 1rem;
+}
+
+.original {
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+    opacity: 0.6;
+}
+
+.discount-price {
+    color: #FF3333;
+    background: #fdbdbd;
+    padding: 3px 5px;
+    border-radius: 62px;
+}
