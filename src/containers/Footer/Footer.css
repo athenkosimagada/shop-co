@@ -1,6 +1,7 @@
 .footer {
     padding: 3rem 5%;
     background: #F0F0F0;
+    overflow: hidden;
 }
 
 .footer-top {
