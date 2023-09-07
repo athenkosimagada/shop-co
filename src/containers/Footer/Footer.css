@@ -72,7 +72,7 @@
     }
 
     .footer-content {
-        overflow: hidden;
+        width: 100%;
     }
 
     .footer-content p {
