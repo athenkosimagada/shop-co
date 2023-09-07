@@ -25,8 +25,7 @@
 .footer-content p {
     font-size: 14px;
     opacity: 0.6;
-    max-width: 100%;
-    flex-wrap: wrap;
+    max-width: 300px;
 }
 
 .footer-socials {
@@ -72,8 +71,12 @@
         flex-direction: column;
     }
 
+    .footer-content {
+        overflow: hidden;
+    }
+
     .footer-content p {
-        max-width: max-content;
+        max-width: 55%;
     }
 
     .links-content {
