@@ -7,6 +7,7 @@ import New from "./containers/New/New";
 import { data } from './constants';
 import Browse from "./containers/Browse/Browse";
 import Reviews from "./containers/Carousel/Reviews";
+import Footer from "./containers/Footer/Footer";
 
 const App = () => {
     return (
@@ -18,6 +19,7 @@ const App = () => {
             <New key={2} data={data.top} topic="TOP SELLING" value={false}/>
             <Browse />
             <Reviews />
+            <Footer />
         </div>
     );
 }
