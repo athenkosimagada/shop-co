@@ -18,6 +18,11 @@ import casual from '../assets/casual.png';
 import formal from '../assets/formal.png';
 import party from '../assets/party.png';
 import gym from '../assets/gym.png';
+import visa from '../assets/Visa.png';
+import mastercard from '../assets/Mastercard.png';
+import paypal from '../assets/Paypal.png';
+import applepay from '../assets/ Pay.png';
+import googlepay from '../assets/G Pay.png';
 
 
 const images = {
@@ -40,6 +45,11 @@ const images = {
     casual,
     formal,
     party,
-    gym
+    gym,
+    visa,
+    paypal,
+    mastercard,
+    applepay,
+    googlepay,
 };
 export default images;

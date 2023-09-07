@@ -1,5 +1,7 @@
 .footer {
+    position: relative;
     padding: 3rem 5%;
+    margin-top: 8rem;
     background: #F0F0F0;
 }
 
@@ -7,6 +9,8 @@
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+    border-bottom: 1px solid #cacaca;
+    padding-bottom: 3rem;
 }
 
 .footer-content {
@@ -26,6 +30,7 @@
     font-size: 14px;
     opacity: 0.6;
     max-width: 300px;
+    margin-bottom: 1.5rem;
 }
 
 .footer-socials {
@@ -66,6 +71,95 @@
     font-weight: 200;
 }
 
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+
+.footer-right {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-right img {
+    width: 47px;
+    height: 31px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 4.61px;
+}
+
+.subscribe {
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    border-radius: 20px;
+    padding: 5%;
+    margin-top: -11rem;
+    margin-bottom: 1.5rem;
+}
+
+.sub-left {
+    width: 500px;
+}
+
+.sub-left h1 {
+    color: #fff;
+    font-size: 40px;
+}
+
+.sub-right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.sub-right input {
+    width: 100%;
+    height: 44px;
+    border-radius: 20px;
+    border: none;
+    background: #ffff;
+}
+
+.sub-right a {
+    text-decoration: none;
+    color: #000;
+    background: #fff;
+    border-radius: 62px;
+    padding: 0.7rem 3rem;
+}
+
+.input-text {
+    position: relative;
+}
+
+.input-text input {
+    padding: 0 1rem 0 3rem;
+}
+
+.sub-right > input {
+    font-weight: 550;
+}
+
+.input-text i {
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    font-size: 20px;
+    opacity: 0.6;
+}
+
 @media screen and (max-width: 980px) {
     .footer-top {
         flex-direction: column;
@@ -82,5 +176,43 @@
 
     .links-content {
         gap: 1rem;
+    }
+
+    .footer-bottom {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .footer-right img {
+        width: 40px;
+        height: 26px;
+    }
+    
+    .subscribe {
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .sub-left {
+        width: 100%;
+    }
+
+    .sub-left h1 {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .sub-right {
+        width: 100%;
+    }
+
+    .input-text {
+        width: 100%;
+    }
+
+    .input-text input {
+       width: 100%;
     }
 }

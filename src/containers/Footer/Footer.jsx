@@ -1,9 +1,24 @@
 import React from "react";
+import { images } from '../../constants';
 import './Footer.css'
 
 const Footer = () => {
+    const currentYear = new Date().getFullYear();
     return (
         <div className="footer">
+            <div className="subscribe">
+                <div className="sub-left">
+                    <h1>STAY UPTO DATE ABOUT OUR LATEST OFFERS</h1>
+                </div>
+                <div className="sub-right">
+                    <div className="input-text">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" name="email" id="email" placeholder="Enter your email address" />
+                    </div>
+                    
+                    <input type="submit" value="Subscibe to NewsLetter" />
+                </div>
+            </div>
             <div className="footer-top">
                 <div className="footer-content">
                     <h1>SHOP.CO</h1>
@@ -32,7 +47,7 @@ const Footer = () => {
                             <a href="http://">Privacy Policy</a>
                         </div>
                     </div>
-                <div className="links-content">
+                    <div className="links-content">
                         <div className="links-items">
                             <h2>FAQ</h2>
                             <a href="http://">Account</a>
@@ -48,6 +63,18 @@ const Footer = () => {
                             <a href="http://">Youtube Playlist</a>
                         </div>
                     </div>
+            </div>
+            <div className="footer-bottom">
+                <div className="footer-left">
+                    <p>Shop.co © 2000-{currentYear}, All Rights Reserved</p>
+                </div>
+                <div className="footer-right">
+                    <img src={images.visa} alt="Visa" />
+                    <img src={images.mastercard} alt="MasterCard" />
+                    <img src={images.paypal} alt="PayPal" />
+                    <img src={images.applepay} alt="Apple Pay" />
+                    <img src={images.googlepay} alt="Google Pay" />
+                </div>
             </div>
         </div>
     );
