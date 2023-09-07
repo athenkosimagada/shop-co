@@ -1,5 +1,6 @@
 .carousel {
     padding: 2rem 5%;
+    margin-right: -2rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -7,4 +8,11 @@
 
 .carousel h1 {
     font-size: 48px;
+}
+
+@media screen and (max-width: 880px) {
+    .carousel h1 {
+        font-size: 32px;
+        width: 60%;
+    }
 }

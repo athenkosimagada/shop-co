@@ -5,7 +5,7 @@
 
     display: flex;
     justify-content: space-between;
-    min-height: 82.29vh;
+    min-height: 84.29vh;
     position: relative;
     z-index: 2;
 }

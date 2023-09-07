@@ -18,7 +18,6 @@ const App = () => {
             <New key={2} data={data.top} topic="TOP SELLING" value={false}/>
             <Browse />
             <Reviews />
-            <Reviews />
         </div>
     );
 }
