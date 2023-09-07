@@ -1,7 +1,6 @@
 .footer {
     padding: 3rem 5%;
     background: #F0F0F0;
-    overflow: hidden;
 }
 
 .footer-top {
@@ -26,7 +25,8 @@
 .footer-content p {
     font-size: 14px;
     opacity: 0.6;
-    max-width: 300px;
+    max-width: 100%;
+    flex-wrap: wrap;
 }
 
 .footer-socials {
