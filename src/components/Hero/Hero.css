@@ -141,6 +141,7 @@
 
     .numbers-item p {
         font-size: 10px;
+        width: fit-content;
     }
 }
 
