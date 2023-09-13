@@ -16,7 +16,7 @@ const New = ({ data, topic, value }) => {
             <div style={borderStyle} className="new-content">
                 <div className={pressed ? "show-all" : "new-arrivals"}>
                     {data.map((item, index) => (
-                        <Link to="/shop">
+                        <Link to={`/shop/${index}`} key={item + index}>
                             <NewItem key={item + index} imgUrl={item.imgUrl} title={item.title} price={item.price} rate={item.rate} discount={item.discount} />
                         </Link>
                     ))}

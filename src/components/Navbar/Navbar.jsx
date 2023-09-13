@@ -14,8 +14,8 @@ const Navbar = () => {
                 <div className="nav-left">
                     <div className="hamburger" onClick={handClick}>
                         {pressed
-                        ? <i class="fa-solid fa-xmark"></i>
-                        : <i class="fa-solid fa-bars"></i>}
+                        ? <i className="fa-solid fa-xmark"></i>
+                        : <i className="fa-solid fa-bars"></i>}
                     </div>
                     <Link to="/">
                         <h2 className="logo">SHOP.CO</h2>
@@ -32,12 +32,12 @@ const Navbar = () => {
                 </div>
                 <div className="nav-right">
                     <div className="seach-bar">
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i className="fa-solid fa-magnifying-glass"></i>
                         <input type="text" name="product" id="search" placeholder="Search for products..."/>
                     </div>
                     <div className="icons">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <i class="fa-solid fa-user"></i>
+                    <i className="fa-solid fa-cart-shopping"></i>
+                    <i className="fa-solid fa-user"></i>
                     </div>
                 </div>
             </div>
