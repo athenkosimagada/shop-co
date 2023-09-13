@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import './Navbar.css';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [pressed, setPressed] = useState(false);
@@ -16,12 +17,14 @@ const Navbar = () => {
                         ? <i class="fa-solid fa-xmark"></i>
                         : <i class="fa-solid fa-bars"></i>}
                     </div>
-                    <h2 className="logo">SHOP.CO</h2>
+                    <Link to="/">
+                        <h2 className="logo">SHOP.CO</h2>
+                    </Link>
                     <div className={pressed ? "show" : "nav-links"}>
-                        <a href="#">
+                        <Link to="/shop">
                             Shop
                             <i class="fa-solid fa-chevron-down"></i>
-                        </a>
+                        </Link>
                         <a href="#">On Sale</a>
                         <a href="#">New Arrivals</a>
                         <a href="#">Brands</a>

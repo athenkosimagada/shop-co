@@ -34,7 +34,7 @@
     background: #000000;
     color: #FFFFFF;
     padding: 0.8rem 3.375rem;
-    width: 70px;
+    width: fit-content;
     border-radius: 62px;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .hero-img img:first-child {
-    width: 100%;
+    width: fit-content;
     height: 100%;
     padding: 0;
 }

@@ -18,6 +18,15 @@
     font-weight: 900;
 }
 
+.nav-left > a {
+    text-decoration: none;
+    color: #000;
+}
+
+.fa-chevron-down {
+    margin-left: 10px;
+}
+
 .nav-links, .show {
     position: relative;
     display: flex;

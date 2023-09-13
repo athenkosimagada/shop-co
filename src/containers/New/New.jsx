@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import './New.css';
 import NewItem from "../../components/NewItem/NewItem";
+import { Link } from "react-router-dom";
 
 const New = ({ data, topic, value }) => {
     const [pressed, setPressed] = useState(false);
-    function handClick(){
+    function handClick() {
         setPressed(!pressed);
     }
 
@@ -15,7 +16,9 @@ const New = ({ data, topic, value }) => {
             <div style={borderStyle} className="new-content">
                 <div className={pressed ? "show-all" : "new-arrivals"}>
                     {data.map((item, index) => (
-                    <NewItem key={item + index} imgUrl={item.imgUrl} title={item.title} price={item.price} rate={item.rate} discount={item.discount}/>
+                        <Link to="/shop">
+                            <NewItem key={item + index} imgUrl={item.imgUrl} title={item.title} price={item.price} rate={item.rate} discount={item.discount} />
+                        </Link>
                     ))}
                 </div>
                 <div className="bottom">
