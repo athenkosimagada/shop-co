@@ -75,7 +75,7 @@
 }
 
 .numbers-item p {
-    width: max-content;
+    width: fit-content;
 }
 
 @media screen and (max-width: 1100px) {
@@ -92,9 +92,7 @@
         padding: 3rem 0;
     }
 
-    .hero-content p {
-        width: 85%;
-    }
+    
 
     .hero-img img:first-child {
         width: 100%;
@@ -141,7 +139,6 @@
 
     .numbers-item p {
         font-size: 10px;
-        width: fit-content;
     }
 }
 
