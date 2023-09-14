@@ -40,7 +40,7 @@ const NewItem = ({ imgUrl, title, price, rate, discount }) => {
         <p>{rate.toFixed(1)}/5</p>
       </div>
       <div className="price">
-        {discount ? (
+        {discount > 0 ? (
           <>
             <h3>${(price - price * discount).toFixed(2)}</h3>
             <h3 className="original">${price.toFixed(2)}</h3>

@@ -14,8 +14,8 @@ const App = () => {
             <div className="app">
                 <Hero />
                 <Brand />
-                <New key={1} data={data.arrivals} topic="NEW ARRIVALS" value={true} />
-                <New key={2} data={data.top} topic="TOP SELLING" value={false} />
+                <New key={1} data={data.clothes} topic="NEW ARRIVALS" value={true} newData={true}/>
+                <New key={2} data={data.clothes} topic="TOP SELLING" value={false} newData={false}/>
                 <Browse />
                 <Reviews />
             </div>

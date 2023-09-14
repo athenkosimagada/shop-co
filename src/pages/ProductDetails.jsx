@@ -9,7 +9,7 @@ const params = useParams();
     return (
         <MainLayout>
             <div className="product-details">
-                <Details data={data.arrivals[params.id]}/>
+                <Details data={data.clothes[params.id]}/>
             </div>
         </MainLayout>
     );

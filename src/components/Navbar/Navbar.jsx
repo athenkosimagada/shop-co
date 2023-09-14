@@ -23,7 +23,7 @@ const Navbar = () => {
                     <div className={pressed ? "show" : "nav-links"}>
                         <Link to="/shop">
                             Shop
-                            <i class="fa-solid fa-chevron-down"></i>
+                            <i className="fa-solid fa-chevron-down"></i>
                         </Link>
                         <a href="#">On Sale</a>
                         <a href="#">New Arrivals</a>

@@ -7,7 +7,7 @@ const Details = ({ data }) => {
         <div className="details">
                <h1>This is details</h1>
                <p>{data.title}</p>
-               <img src={data.imgUrl} alt="" />
+               <img src={data.imgUrls[0].imgFront} alt="" />
             </div>
     );
 }
