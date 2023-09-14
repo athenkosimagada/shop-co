@@ -17,8 +17,8 @@ const New = ({ data, topic, value, newData }) => {
                 <div className={pressed ? "show-all" : "new-arrivals"}>
                     {data
                         .filter(item => item.new === newData)
-                        .map((item, index) => (
-                            <Link to={`/shop/${index}`} key={item + index}>
+                        .map((item) => (
+                            <Link to={`/shop/${item.id}`} key={item.id}>
                                 <NewItem
                                     imgUrl={item.imgUrls[0].imgFront}
                                     title={item.title}
