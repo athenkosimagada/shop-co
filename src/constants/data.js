@@ -32,7 +32,7 @@ const clothes = [
     {
         id: 0,
         title: "T-SHIRT WITH TAPE DETAILS",
-        description: "This is a product description",
+        description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
         style: "casual",
         type: "T-shirts",
         new: true,
@@ -64,7 +64,7 @@ const clothes = [
     {
         id: 1,
         title: "SKINNY FIT JEANS",
-        description: "This is a product description",
+        description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
         style: "formal",
         type: "Jeans",
         rate: 4,
@@ -88,11 +88,7 @@ const clothes = [
         imgUrls: [
             {
                 imgFront:images.frame33,
-            },
-            {
                 imgBack:images.frame33,
-            }, 
-            {
                 imgPerson:images.frame33,
             }
         ],

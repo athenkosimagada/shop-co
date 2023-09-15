@@ -3,3 +3,160 @@
     padding: 2rem 0;
     border-top: 1px solid #00000021;
 }
+
+.menu-path {
+    display: flex;
+    align-items: center;
+    padding-bottom: 2rem;
+    gap: 5px;
+}
+
+.menu-path i {
+    margin-right: 10px;
+    color: #00000078;
+}
+
+.menu-path a {
+    text-decoration: none;
+    color: #00000078;
+}
+
+.product {
+    display: flex;
+    gap: 2rem;
+    box-sizing: border-box;
+}
+
+.product-images {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.choice-img {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.choice-img img {
+    width: 156px;
+}
+
+.main-img {
+    width: 100%;
+    height: 100%;
+}
+
+.main-img img {
+    width: 400px; 
+    height: 500px;
+    border-radius: 16px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.product-details p{
+    color: #0000006a;
+}
+
+.select {
+    display: flex;
+    gap: 1rem;
+}
+
+.details-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-top: 1px solid #00000025;
+    padding: 1rem 0;
+}
+
+.details-item p {
+    color: #0000006a;
+}
+
+.count {
+    display: flex;
+    gap: 1.3rem;
+    background: #F0F0F0;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.count i {
+    cursor: pointer;
+}
+
+.prodict-color {
+    background: red;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prodict-size {
+    background: #F0F0F0;
+    color: #0000006a;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.add-cart {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    background: #000;
+    color: #fff;
+    padding: 0.5rem 2rem;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 1155px) {
+    .product {
+        flex-wrap: wrap;
+    }
+
+    .product-details {
+        width: 100%;
+    }
+
+    .main-img img{
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 16/10;
+    }
+
+    .product-images {
+        flex-direction: column;
+    }
+
+    .choice-img {
+        order: 1;
+        flex-direction: row;
+    }
+
+    .main-img img {
+        width: 500px;
+    }
+
+    .choice-img img {
+        width: 156px;
+    }
+
+    .add-cart {
+       flex: 1;
+    }
+}

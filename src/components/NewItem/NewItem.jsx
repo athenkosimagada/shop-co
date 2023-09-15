@@ -1,6 +1,5 @@
 import React from "react";
 import './NewItem.css';
-import { FaStar } from 'react-icons/fa';
 
 const NewItem = ({ imgUrl, title, price, rate, discount }) => {
   // Calculate the number of full stars and the decimal part
