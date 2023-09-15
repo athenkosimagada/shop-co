@@ -167,10 +167,6 @@
         aspect-ratio: 16/15;
     }
 
-    .choice-img img {
-        width: 100%
-    }
-
     .add-cart {
        flex: 1;
     }
