@@ -53,7 +53,7 @@ const Details = ({ data }) => {
             <img src={data.imgUrls[0].imgPerson} alt="" />
           </div>
           <div className="main-img">
-            <img src={data.imgUrls[0].imgFront}alt="" />
+            <img src={data.imgUrls[0].imgFront} alt="" />
           </div>
         </div>
         <div className="product-details">
@@ -89,20 +89,22 @@ const Details = ({ data }) => {
           <div className="details-item">
             <p>Choose Size</p>
             <div className="select">
-            <div className="prodict-size cur-color">Small</div>
-            <div className="prodict-size">Medium</div>
-            <div className="prodict-size">Large</div>
-            <div className="prodict-size">X-Large</div>
+              <div className="prodict-size cur-color">Small</div>
+              <div className="prodict-size">Medium</div>
+              <div className="prodict-size">Large</div>
+              <div className="prodict-size">X-Large</div>
             </div>
           </div>
           <div className="details-item">
             <div className="select">
-            <div className="count">
-              <i class="fa-solid fa-minus"></i>
-              <span className="count-num">1</span>
-              <i class="fa-solid fa-plus"></i>
-            </div>
-            <a className="add-cart" href="#">Add to Cart</a>
+              <div className="count">
+                <i class="fa-solid fa-minus"></i>
+                <span className="count-num">1</span>
+                <i class="fa-solid fa-plus"></i>
+              </div>
+              <a className="add-cart" href="#">
+                Add to Cart
+              </a>
             </div>
           </div>
         </div>
