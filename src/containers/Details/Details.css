@@ -182,7 +182,7 @@
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 500px) {
     .choice-img img {
         width: 100%;
         height: 100%;
