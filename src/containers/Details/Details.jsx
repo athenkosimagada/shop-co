@@ -48,12 +48,12 @@ const Details = ({ data }) => {
       <div className="product">
         <div className="product-images">
           <div className="choice-img">
-            <img src={data.imgUrls[0].imgFront} alt="" />
+            <img className="choosen" src={data.imgUrls[0].imgFront} alt="" />
             <img src={data.imgUrls[0].imgBack} alt="" />
             <img src={data.imgUrls[0].imgPerson} alt="" />
           </div>
           <div className="main-img">
-            <img src="https://images.pexels.com/photos/1537671/pexels-photo-1537671.jpeg?auto=compress&cs=tinysrgb&w=600"alt="" />
+            <img src={data.imgUrls[0].imgFront}alt="" />
           </div>
         </div>
         <div className="product-details">
