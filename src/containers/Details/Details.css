@@ -132,6 +132,10 @@
     border-radius: 20px;
 }
 
+.cur-color {
+    color: #fff;background: #000;
+}
+
 @media screen and (max-width: 1155px) {
     .product {
         flex-wrap: wrap;

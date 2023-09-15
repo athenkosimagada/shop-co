@@ -89,7 +89,7 @@ const Details = ({ data }) => {
           <div className="details-item">
             <p>Choose Size</p>
             <div className="select">
-            <div className="prodict-size">Small</div>
+            <div className="prodict-size cur-color">Small</div>
             <div className="prodict-size">Medium</div>
             <div className="prodict-size">Large</div>
             <div className="prodict-size">X-Large</div>
