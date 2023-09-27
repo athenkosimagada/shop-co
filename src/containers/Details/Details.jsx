@@ -150,9 +150,9 @@ function Details({ data }) {
 
         <div className="container last-container">
           <div className="quantity-changer">
-              <FaMinus onClick={decrementCount} />
+              <FaMinus className="btn-change" onClick={decrementCount} />
               <p>{count}</p>
-              <FaPlus onClick={incrementCount} />
+              <FaPlus className="btn-change" onClick={incrementCount} />
           </div>
           <button type="button" className="btn-addcart">Add to Cart</button>
         </div>
