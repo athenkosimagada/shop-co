@@ -136,6 +136,10 @@ function Details({ data }) {
             ))}
           </div>
         </div>
+
+        <div className="container">
+          
+        </div>
       </div>
     </div>
   );
