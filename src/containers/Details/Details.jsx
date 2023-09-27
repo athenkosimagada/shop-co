@@ -53,13 +53,15 @@ function Details({ data }) {
       <div className="images">
         <div className="img-3">
           {data.imgUrls.map((img, index) => (
-            <img
+            <div> 
+              <img
               key={index}
               onClick={() => handleImageClick(img.pic, index)}
               src={img.pic}
               alt={`Image ${index}`}
               className={index === selectedImageIndex ? "selected" : ""}
             />
+            </div>
           ))}
         </div>
         <div className="img-1">

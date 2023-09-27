@@ -36,6 +36,9 @@
     height: 100%;
     width: 100%;
 }
+.img-3 img {
+    cursor: pointer;
+}
 
 .product-detail {
     flex: 1;
