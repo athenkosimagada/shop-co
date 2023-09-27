@@ -9,6 +9,9 @@ const Navbar = () => {
 
     function handClick() {
         setPressed(!pressed);
+        if(!pressed) {
+            setShowShopLinks(!setShowShopLinks);
+        }
     }
 
     function toggleShopLinks() {
