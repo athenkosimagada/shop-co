@@ -5,8 +5,14 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [pressed, setPressed] = useState(false);
-    function handClick(){
+    const [showShopLinks, setShowShopLinks] = useState(false);
+
+    function handClick() {
         setPressed(!pressed);
+    }
+
+    function toggleShopLinks() {
+        setShowShopLinks(!showShopLinks);
     }
     return (
         <div className="navbar">
@@ -20,11 +26,20 @@ const Navbar = () => {
                     <Link to="/">
                         <h2 className="logo">SHOP.CO</h2>
                     </Link>
-                    <div className={pressed ? "show" : "nav-links"}>
-                        <Link to="/shop">
+                    <div id="nav" className={pressed ? "show" : "nav-links"}>
+                        <Link onClick={toggleShopLinks}>
                             Shop
-                            <i className="fa-solid fa-chevron-down"></i>
+                            {showShopLinks
+                                ? <i className="fa-solid fa-chevron-up"></i>
+                                : <i className="fa-solid fa-chevron-down"></i>}
                         </Link>
+                        {showShopLinks && (
+                            <div className="sub-menu">
+                                <Link to="/category1">Category 1</Link>
+                                <Link to="/category2">Category 2</Link>
+                                <Link to="/category3">Category 3</Link>
+                            </div>
+                        )}
                         <a href="#">On Sale</a>
                         <a href="#">New Arrivals</a>
                         <a href="#">Brands</a>

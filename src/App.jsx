@@ -13,8 +13,8 @@ const App = () => {
         <MainLayout>
             <div className="app">
                 <Hero />
-                <Brand />
-                <New key={1} data={data.clothes} topic="NEW ARRIVALS" value={true} newData={true}/>
+                <Brand id="brands"/>
+                <New id="new-arrivals" key={1} data={data.clothes} topic="NEW ARRIVALS" value={true} newData={true}/>
                 <New key={2} data={data.clothes} topic="TOP SELLING" value={false} newData={false}/>
                 <Browse />
                 <Reviews />
