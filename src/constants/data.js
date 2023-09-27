@@ -31,7 +31,7 @@ const reviews = [
 const clothes = [
     {
         id: 0,
-        title: "T-SHIRT WITH TAPE DETAILS",
+        title: "Burussia Dortmurd 23/24 Home Jersey",
         description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
         style: "casual",
         type: "T-shirts",
@@ -41,23 +41,41 @@ const clothes = [
         discount: 0,
         quantity: 0,
         sold: 6,
-        sizes: [{
-            small: 35,
-            medium: 15,
-            large: 43,
-            xlarge: 43,
-        }],
-        colors: [{
-            red: "#FFFF00",
-            green: "#FFFF00",
-            brown: "#FFFF00",
-        }],
+        sizes: [
+            {
+                size: "Small"
+            },
+            {
+                size: "Medium"
+            },
+            {
+                size: "Large"
+            },
+            {
+                size: "X Large"
+            },
+        ],
+        colors: [
+            {
+                red: "#F1FF00"
+            },
+            {
+                green: "#000"
+            },
+            {
+                brown: "#FF0000"
+            },
+        ],
         reviews: reviews,
         imgUrls: [
             {
-                imgFront:images.frame32,
-                imgBack:images.frame32,
-                imgPerson:images.frame32,
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/fnd/ZAF/w/1000/h/1000/fmt/png",
+            }, 
+            {
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
+            },
+            {
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
             }
         ],
     },
@@ -72,24 +90,42 @@ const clothes = [
         discount: 0.2,
         quantity: 0,
         sold: 6,
-        new: false,
-        sizes: [{
-            small: 35,
-            medium: 15,
-            large: 43,
-            xlarge: 43,
-        }],
-        colors: [{
-            red: "#FFFF00",
-            green: "#FFFF00",
-            brown: "#FFFF00",
-        }],
+        new: true,
+        sizes: [
+            {
+                size: "Small"
+            },
+            {
+                size: "Medium"
+            },
+            {
+                size: "Large"
+            },
+            {
+                size: "X Large"
+            },
+        ],
+        colors: [
+            {
+                red: "#F1FF00"
+            },
+            {
+                green: "#000"
+            },
+            {
+                brown: "#FF0000"
+            },
+        ],
         reviews: reviews,
         imgUrls: [
             {
-                imgFront:images.frame33,
-                imgBack:images.frame33,
-                imgPerson:images.frame33,
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/fnd/ZAF/w/1000/h/1000/fmt/png",
+            }, 
+            {
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
+            },
+            {
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
             }
         ],
     }, 
@@ -105,27 +141,41 @@ const clothes = [
         discount: 0.3,
         quantity: 0,
         sold: 6,
-        sizes: [{
-            small: 35,
-            medium: 15,
-            large: 43,
-            xlarge: 43,
-        }],
-        colors: [{
-            red: "#FFFF00",
-            green: "#FFFF00",
-            brown: "#FFFF00",
-        }],
+        sizes: [
+            {
+                size: "Small"
+            },
+            {
+                size: "Medium"
+            },
+            {
+                size: "Large"
+            },
+            {
+                size: "X Large"
+            },
+        ],
+        colors: [
+            {
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/fnd/ZAF/w/1000/h/1000/fmt/png",
+            }, 
+            {
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
+            },
+            {
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
+            }
+        ],
         reviews: reviews,
         imgUrls: [
             {
-                imgFront:images.frame34,
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/fnd/ZAF/w/1000/h/1000/fmt/png",
             }, 
             {
-                imgBack:images.frame34,
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
             },
             {
-                imgPerson:images.frame34,
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
             }
         ],
     },
@@ -140,27 +190,41 @@ const clothes = [
         discount: 0,
         quantity: 0,
         sold: 6,
-        sizes: [{
-            small: 35,
-            medium: 15,
-            large: 43,
-            xlarge: 43,
-        }],
-        colors: [{
-            red: "#FFFF00",
-            green: "#FFFF00",
-            brown: "#FFFF00",
-        }],
+        sizes: [
+            {
+                size: "Small"
+            },
+            {
+                size: "Medium"
+            },
+            {
+                size: "Large"
+            },
+            {
+                size: "X Large"
+            },
+        ],
+        colors: [
+            {
+                red: "#F1FF00"
+            },
+            {
+                green: "#000"
+            },
+            {
+                brown: "#FF0000"
+            },
+        ],
         reviews: reviews,
         imgUrls: [
             {
-                imgFront:images.frame38,
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/fnd/ZAF/w/1000/h/1000/fmt/png",
             }, 
             {
-                imgBack:images.frame38,
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
             },
             {
-                imgPerson:images.frame38,
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
             }
         ],
     },
@@ -176,27 +240,41 @@ const clothes = [
         discount: 0,
         quantity: 0,
         sold: 6,
-        sizes: [{
-            small: 35,
-            medium: 15,
-            large: 43,
-            xlarge: 43,
-        }],
-        colors: [{
-            red: "#FFFF00",
-            green: "#FFFF00",
-            brown: "#FFFF00",
-        }],
+        sizes: [
+            {
+                size: "Small"
+            },
+            {
+                size: "Medium"
+            },
+            {
+                size: "Large"
+            },
+            {
+                size: "X Large"
+            },
+        ],
+        colors: [
+            {
+                red: "#F1FF00"
+            },
+            {
+                green: "#000"
+            },
+            {
+                brown: "#FF0000"
+            },
+        ],
         reviews: reviews,
         imgUrls: [
             {
-                imgFront:images.frame40,
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/fnd/ZAF/w/1000/h/1000/fmt/png",
             }, 
             {
-                imgBack:images.frame40,
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
             },
             {
-                imgPerson:images.frame40,
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
             }
         ],
     },
@@ -212,27 +290,41 @@ const clothes = [
         discount: 0.5,
         quantity: 0,
         sold: 6,
-        sizes: [{
-            small: 35,
-            medium: 15,
-            large: 43,
-            xlarge: 43,
-        }],
-        colors: [{
-            red: "#FFFF00",
-            green: "#FFFF00",
-            brown: "#FFFF00",
-        }],
+        sizes: [
+            {
+                size: "Small"
+            },
+            {
+                size: "Medium"
+            },
+            {
+                size: "Large"
+            },
+            {
+                size: "X Large"
+            },
+        ],
+        colors: [
+            {
+                red: "#F1FF00"
+            },
+            {
+                green: "#000"
+            },
+            {
+                brown: "#FF0000"
+            },
+        ],
         reviews: reviews,
         imgUrls: [
             {
-                imgFront:images.frame41,
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/fnd/ZAF/w/1000/h/1000/fmt/png",
+            }, 
+            {
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
             },
             {
-                imgBack:images.frame41,
-            },
-            {
-                imgPerson:images.frame41,
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
             }
         ],
     },
@@ -248,27 +340,41 @@ const clothes = [
         discount: 0.3,
         quantity: 0,
         sold: 6,
-        sizes: [{
-            small: 35,
-            medium: 15,
-            large: 43,
-            xlarge: 43,
-        }],
-        colors: [{
-            red: "#FFFF00",
-            green: "#FFFF00",
-            brown: "#FFFF00",
-        }],
+        sizes: [
+            {
+                size: "Small"
+            },
+            {
+                size: "Medium"
+            },
+            {
+                size: "Large"
+            },
+            {
+                size: "X Large"
+            },
+        ],
+        colors: [
+            {
+                red: "#F1FF00"
+            },
+            {
+                green: "#000"
+            },
+            {
+                brown: "#FF0000"
+            },
+        ],
         reviews: reviews,
         imgUrls: [
             {
-                imgFront:images.frame42,
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/fnd/ZAF/w/1000/h/1000/fmt/png",
+            }, 
+            {
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
             },
             {
-                imgBack:images.frame42,
-            },
-            {
-                imgPerson:images.frame42,
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
             }
         ],
     },
@@ -284,27 +390,41 @@ const clothes = [
         discount: 0,
         quantity: 0,
         sold: 6,
-        sizes: [{
-            small: 35,
-            medium: 15,
-            large: 43,
-            xlarge: 43,
-        }],
-        colors: [{
-            red: "#FFFF00",
-            green: "#FFFF00",
-            brown: "#FFFF00",
-        }],
+        sizes: [
+            {
+                size: "Small"
+            },
+            {
+                size: "Medium"
+            },
+            {
+                size: "Large"
+            },
+            {
+                size: "X Large"
+            },
+        ],
+        colors: [
+            {
+                red: "#F1FF00"
+            },
+            {
+                green: "#000"
+            },
+            {
+                brown: "#FF0000"
+            },
+        ],
         reviews: reviews,
         imgUrls: [
             {
-                imgFront:images.frame43,
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/fnd/ZAF/w/1000/h/1000/fmt/png",
+            }, 
+            {
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
             },
             {
-                imgBack:images.frame43,
-            },
-            {
-                imgPerson:images.frame43,
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
             }
         ],
     },

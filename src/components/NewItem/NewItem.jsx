@@ -3,19 +3,15 @@ import './NewItem.css';
 import { FaStar } from "react-icons/fa";
 
 const NewItem = ({ imgUrl, title, price, rate, discount }) => {
-  // Calculate the number of full stars and the decimal part
   const fullStars = Math.floor(rate);
   const decimalPart = rate - fullStars;
 
-  // Create an array to represent the stars
   const stars = [];
 
-  // Add full stars with gold color and empty stars with white color
   for (let i = 0; i < 5; i++) {
     if (i < fullStars) {
       stars.push(<FaStar key={i} size={20} style={{ color: 'gold' }} />);
     } else if (i === fullStars && decimalPart > 0) {
-      // Render a fractional star in gold color
       stars.push(
         <FaStar
           key="half"

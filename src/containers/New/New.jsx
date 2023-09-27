@@ -20,7 +20,7 @@ const New = ({ data, topic, value, newData }) => {
             .map((item) => (
               <Link to={`/shop/${item.id}`} key={item.id}>
                 <NewItem
-                  imgUrl={item.imgUrls[0].imgFront}
+                  imgUrl={item.imgUrls[0].pic}
                   title={item.title}
                   price={item.price}
                   rate={item.rate}
