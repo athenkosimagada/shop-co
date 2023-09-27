@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./Details.css";
 
-import { FaStar, FaCheck } from "react-icons/fa";
+import { FaStar, FaCheck,FaPlus, FaMinus } from "react-icons/fa";
 
 function Details({ data }) {
   const [image, setImage] = useState(data.imgUrls[0]?.pic);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [selectedColorIndex, setSelectedColorIndex] = useState(0);
   const [selectedSizeIndex, setSelectedSizeIndex] = useState(0);
+  const [count, setCount] = useState(1);
 
   function handleImageClick(newImage, index) {
     setImage(newImage);
@@ -19,6 +20,16 @@ function Details({ data }) {
 
   function setSelectedSize(index) {
     setSelectedSizeIndex(index);
+  }
+
+  function incrementCount() {
+    setCount(count + 1);
+  }
+
+  function decrementCount() {
+    if (count > 1) {
+      setCount(count - 1);
+    }
   }
 
   // Rating code
@@ -137,8 +148,13 @@ function Details({ data }) {
           </div>
         </div>
 
-        <div className="container">
-          
+        <div className="container last-container">
+          <div className="quantity-changer">
+              <FaMinus onClick={decrementCount} />
+              <p>{count}</p>
+              <FaPlus onClick={incrementCount} />
+          </div>
+          <button type="button" className="btn-addcart">Add to Cart</button>
         </div>
       </div>
     </div>
