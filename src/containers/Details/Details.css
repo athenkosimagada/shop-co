@@ -125,3 +125,9 @@
         object-fit: cover;
     }
 }
+
+@media screen and (max-width: 568px) {
+    .size {
+        font-size: 12px;
+    }
+}
