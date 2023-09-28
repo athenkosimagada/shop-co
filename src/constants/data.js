@@ -31,7 +31,7 @@ const reviews = [
 const clothes = [
     {
         id: 0,
-        title: "Burussia Dortmurd 23/24 Home Jersey",
+        title: "BURUSSIA DORTMURD 23/24 HOME JERSEY",
         description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
         style: "casual",
         type: "T-shirts",
@@ -81,7 +81,7 @@ const clothes = [
     },
     {
         id: 1,
-        title: "SKINNY FIT JEANS",
+        title: "AC MILAN 23/24 YOUTH HOME JERSEY",
         description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
         style: "formal",
         type: "Jeans",
@@ -119,19 +119,19 @@ const clothes = [
         reviews: reviews,
         imgUrls: [
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770385/01/fnd/ZAF/w/1000/h/1000/fmt/png",
             }, 
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770385/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
             },
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770385/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
             }
         ],
     }, 
     {
         id: 2,
-        title: "CHECKERED SHIRT",
+        title: "MEN SHORTS",
         description: "This is a product description",
         style: "casual",
         type: "Shirts",
@@ -157,34 +157,35 @@ const clothes = [
         ],
         colors: [
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/fnd/ZAF/w/1000/h/1000/fmt/png",
-            }, 
-            {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
+                red: "#F1FF00"
             },
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
-            }
+                green: "#000"
+            },
+            {
+                brown: "#FF0000"
+            },
         ],
         reviews: reviews,
         imgUrls: [
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/522110/01/fnd/ZAF/w/1000/h/1000/fmt/png",
             }, 
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/522110/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
             },
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/522110/01/dt04/fnd/ZAF/w/1000/h/1000/fmt/png",
             }
         ],
     },
     {
         id: 3,
-        title: "SLEEVE STRIPED T-SHIRT",
+        title: "PUMA X LIBERTY MEN'S GOLF QUARTER-ZIP",
         description: "This is a product description",
         style: "party",
         type: "T-shirts",
+        new: false,
         rate: 3.9,
         price: 320,
         discount: 0,
@@ -218,19 +219,19 @@ const clothes = [
         reviews: reviews,
         imgUrls: [
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/621640/02/fnd/ZAF/w/1000/h/1000/fmt/png",
             }, 
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/621640/02/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
             },
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/621640/02/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
             }
         ],
     },
     {
         id: 4,
-        title: "VERTICAL STRIPED SHIRT",
+        title: "SEASONS WOOL LONG SLEEVE RUNNING TEE WOMEN",
         description: "This is a product description",
         style: "casual",
         type: "Shirts",
@@ -268,19 +269,19 @@ const clothes = [
         reviews: reviews,
         imgUrls: [
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.net/images/522576/35/fnd/ZAF/w/640/h/640",
             }, 
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.net/images/522576/35/bv/fnd/ZAF/w/640/h/640",
             },
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/522576/35/mod01/fnd/ZAF/w/640/h/640/fmt/png",
             }
         ],
     },
     {
         id: 5,
-        title: "COURAGE GRAPHIC T-SHIRT",
+        title: "CLASSICS TURTLENECK WOMEN'S SWEATSHIRT",
         description: "This is a product description",
         style: "gym",
         type: "T-shirts",
@@ -318,19 +319,19 @@ const clothes = [
         reviews: reviews,
         imgUrls: [
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.net/images/531695/01/fnd/ZAF/w/640/h/640",
             }, 
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.net/images/531695/01/bv/fnd/ZAF/w/640/h/640",
             },
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.net/images/531695/01/mod03/fnd/ZAF/w/640/h/640",
             }
         ],
     },
     {
         id: 6,
-        title: "LOOSE FIT BERMUDA SHORTS",
+        title: "PUMA X LIBERTY WOMEN'S REVERSIBLE PUFFER JACKET",
         description: "This is a product description",
         style: "party",
         type: "Shorts",
@@ -368,19 +369,19 @@ const clothes = [
         reviews: reviews,
         imgUrls: [
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/622211/25/fnd/ZAF/w/1000/h/1000/fmt/png",
             }, 
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/622211/25/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
             },
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/622211/25/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
             }
         ],
     },
     {
         id: 7,
-        title: "FADED SKINNY JEANS",
+        title: "CLASSICS WOMEN'S FLARED LEGGINGS",
         description: "This is a product description",
         style: "formal",
         type: "Jeans",
@@ -418,13 +419,63 @@ const clothes = [
         reviews: reviews,
         imgUrls: [
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/622183/99/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
             }, 
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/622183/99/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
             },
             {
-                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/770604/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/622183/99/mod02/fnd/ZAF/w/1000/h/1000/fmt/png",
+            }
+        ],
+    },
+    {
+        id: 8,
+        title: "ESS+ MARBLEIZED WOMEN'S TEE",
+        description: "This is a product description",
+        style: "formal",
+        type: "Jeans",
+        new: false,
+        rate: 4.2,
+        price: 280,
+        discount: 0,
+        quantity: 0,
+        sold: 6,
+        sizes: [
+            {
+                size: "Small"
+            },
+            {
+                size: "Medium"
+            },
+            {
+                size: "Large"
+            },
+            {
+                size: "X Large"
+            },
+        ],
+        colors: [
+            {
+                red: "#F1FF00"
+            },
+            {
+                green: "#000"
+            },
+            {
+                brown: "#FF0000"
+            },
+        ],
+        reviews: reviews,
+        imgUrls: [
+            {
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/677206/01/fnd/ZAF/w/1000/h/1000/fmt/png",
+            }, 
+            {
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/677206/01/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
+            },
+            {
+                pic:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/677206/01/mod01/fnd/ZAF/w/1000/h/1000/fmt/png",
             }
         ],
     },
