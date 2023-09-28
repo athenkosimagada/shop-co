@@ -12,15 +12,13 @@ import "./ProductDetails.css";
 const ProductDetails = () => {
   const params = useParams();
   const [reload, setReload] = useState(false);
-  const navigate = useNavigate();
-
+  
   useEffect(() => {
     window.scrollTo(0, 0);
     if (reload) {
-      // Delay the reload by 100 milliseconds for a smoother transition
-      setTimeout(() => {
-        window.location.reload();
-      }, 100);
+        setTimeout(() => {
+            window.location.reload();
+        }, 100);
     }
   }, [params.id, reload]);
 
@@ -32,7 +30,10 @@ const ProductDetails = () => {
     <MainLayout>
       <div className="product-page">
         <div className="navigation">
-          {/* ... */}
+            <a href="#"><p>Home</p> <i className="fa-solid fa-chevron-right"></i></a>
+            <a href="#"><p>Shop</p> <i className="fa-solid fa-chevron-right"></i></a>
+            <a href="#"><p>Women</p> <i className="fa-solid fa-chevron-right"></i></a>
+            <p>{data.clothes[params.id].type}</p>
         </div>
         <Details
           data={data.clothes[params.id]}
