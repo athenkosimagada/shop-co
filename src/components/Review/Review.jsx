@@ -3,7 +3,7 @@ import { FaStar } from 'react-icons/fa';
 import './Review.css';
 
 
-const Review = ({rate, name, comment}) => {
+const Review = ({rate, name, comment, date}) => {
     // Calculate the number of full stars and the decimal part
   const fullStars = Math.floor(rate);
   const decimalPart = rate - fullStars;
@@ -37,6 +37,7 @@ const Review = ({rate, name, comment}) => {
             <div className="star-rating">{stars}</div>
             <h2>{name}<i class="fa-solid fa-circle-check"></i></h2>
             <p>{comment}</p>
+            {date && <p>Posted on {date}</p>}
         </div>
     );
 }

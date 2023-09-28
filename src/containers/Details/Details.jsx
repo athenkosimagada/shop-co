@@ -3,8 +3,8 @@ import "./Details.css";
 
 import { FaStar, FaCheck,FaPlus, FaMinus } from "react-icons/fa";
 
-function Details({ data }) {
-  const [image, setImage] = useState(data.imgUrls[0]?.pic);
+function Details({ data, current }) {
+  const [image, setImage] = useState(current);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [selectedColorIndex, setSelectedColorIndex] = useState(0);
   const [selectedSizeIndex, setSelectedSizeIndex] = useState(0);
