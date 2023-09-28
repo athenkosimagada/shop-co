@@ -12,13 +12,17 @@ import "./ProductDetails.css";
 const ProductDetails = () => {
   const params = useParams();
   const [reload, setReload] = useState(false);
+  const [pressed, setPressed] = useState(false);
   
+  function handClick() {
+    setPressed(!pressed);
+  }
   useEffect(() => {
     window.scrollTo(0, 0);
     if (reload) {
-        setTimeout(() => {
-            window.location.reload();
-        }, 100);
+      setTimeout(() => {
+        window.location.reload();
+      }, 100);
     }
   }, [params.id, reload]);
 
@@ -30,30 +34,46 @@ const ProductDetails = () => {
     <MainLayout>
       <div className="product-page">
         <div className="navigation">
-            <a href="#"><p>Home</p> <i className="fa-solid fa-chevron-right"></i></a>
-            <a href="#"><p>Shop</p> <i className="fa-solid fa-chevron-right"></i></a>
-            <a href="#"><p>Women</p> <i className="fa-solid fa-chevron-right"></i></a>
-            <p>{data.clothes[params.id].type}</p>
+          <a href="#">
+            <p>Home</p> <i className="fa-solid fa-chevron-right"></i>
+          </a>
+          <a href="#">
+            <p>Shop</p> <i className="fa-solid fa-chevron-right"></i>
+          </a>
+          <a href="#">
+            <p>Women</p> <i className="fa-solid fa-chevron-right"></i>
+          </a>
+          <p>{data.clothes[params.id].type}</p>
         </div>
         <Details
           data={data.clothes[params.id]}
           current={data.clothes[params.id].imgUrls[0].pic}
         />
-         <div className="product-reviews">
-            <div className="top-reviews">
-                <div className="left-reviews">
-                <h2>All Reviews</h2>
-                <p>({data.clothes[params.id].reviews.length})</p>
-                </div>
-                <div className="right-reviews">
-
-                </div>
+        <div className="product-reviews">
+          <div className="top-reviews">
+            <div className="left-reviews">
+              <h2>All Reviews</h2>
+              <p>({data.clothes[params.id].reviews.length})</p>
             </div>
-            <div className="reviews-content">
+            <div className="right-reviews"></div>
+          </div>
+          <div className="reviews-content">
             {data.clothes[params.id].reviews.map((item, index) => (
-                    <Review key={item + index} rate={item.rate} name={item.name} comment={item.comment} date='August 17, 2023'/>
-              ))}
-            </div>
+              <Review
+                key={item + index}
+                rate={item.rate}
+                name={item.name}
+                comment={item.comment}
+                date="August 17, 2023"
+              />
+            ))}
+          </div>
+
+          <div className="bottom">
+            <button className="view-button" type="button" onClick={handClick}>
+              Load More Reviews
+            </button>
+          </div>
         </div>
         <div className="similar">
           <h1>YOU MAY ALSO LIKE</h1>
