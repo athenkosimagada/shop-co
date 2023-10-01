@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import MainLayout from "../layout/MainLayout";
-import Details from "../containers/Details/Details";
-import NewItem from "../components/NewItem/NewItem";
-import Review from "../components/Review/Review";
+import MainLayout from "../../layout/MainLayout";
+import Details from "../../containers/Details/Details";
+import NewItem from "../../components/NewItem/NewItem";
+import Review from "../../components/Review/Review";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { data } from "../constants";
+import { data } from "../../constants";
 import "./ProductDetails.css";
 
 const ProductDetails = () => {
@@ -34,15 +33,15 @@ const ProductDetails = () => {
     <MainLayout>
       <div className="product-page">
         <div className="navigation">
-          <a href="#">
+          <Link to="/">
             <p>Home</p> <i className="fa-solid fa-chevron-right"></i>
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="/shop">
             <p>Shop</p> <i className="fa-solid fa-chevron-right"></i>
-          </a>
-          <a href="#">
-            <p>Women</p> <i className="fa-solid fa-chevron-right"></i>
-          </a>
+          </Link>
+          <Link to={`/${data.clothes[params.id].gender}`}>
+            <p>{data.clothes[params.id].gender}</p> <i className="fa-solid fa-chevron-right"></i>
+          </Link>
           <p>{data.clothes[params.id].type}</p>
         </div>
         <Details

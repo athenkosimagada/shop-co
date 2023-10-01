@@ -38,14 +38,14 @@ const Navbar = () => {
                         </Link>
                         {showShopLinks && (
                             <div className="sub-menu">
-                                <Link to="/category1">Category 1</Link>
-                                <Link to="/category2">Category 2</Link>
-                                <Link to="/category3">Category 3</Link>
+                                <Link to="/shop">All</Link>
+                                <Link to="/Men">Men</Link>
+                                <Link to="/Women">Women</Link>
                             </div>
                         )}
-                        <a href="#">On Sale</a>
-                        <a href="#">New Arrivals</a>
-                        <a href="#">Brands</a>
+                        <Link to="/sale">On Sale</Link>
+                        <Link to="/arrivals">New Arrivals</Link>
+                        <Link to="/brands">Brands</Link>
                     </div>
                 </div>
                 <div className="nav-right">
