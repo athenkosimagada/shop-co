@@ -29,3 +29,18 @@ html {
 .product-page {
     margin: 0 5%;
 }
+
+.navigation {
+    display: flex;
+    gap: 1rem;
+    padding: 1.3rem 0;
+    border-top:  1px solid #00000039;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #00000083;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
