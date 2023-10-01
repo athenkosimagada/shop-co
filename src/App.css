@@ -10,7 +10,6 @@ html {
     box-sizing: border-box;
 }
 
-
 .flex-center {
     display: flex;
     justify-content: center;
@@ -43,4 +42,42 @@ html {
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+.items {
+    display: grid;
+    gap: 1rem;
+}
+
+.items a {
+    flex: 1;
+}
+
+.items .new-item {
+    width: fit-content;
+}
+
+@media screen and (min-width: 1050px) {
+    .items {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for big screens */
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .items {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .items {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .items a {
+        flex-basis: calc(50% - 1rem);
+    }
 }

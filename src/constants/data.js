@@ -256,6 +256,9 @@ const clothes = [
                 size: "Small"
             },
             {
+                size: "X Small"
+            },
+            {
                 size: "Medium"
             },
             {
@@ -305,9 +308,6 @@ const clothes = [
         sizes: [
             {
                 size: "Small"
-            },
-            {
-                size: "Medium"
             },
             {
                 size: "Large"
@@ -363,9 +363,6 @@ const clothes = [
             {
                 size: "Large"
             },
-            {
-                size: "X Large"
-            },
         ],
         colors: [
             {
@@ -411,23 +408,17 @@ const clothes = [
             {
                 size: "Medium"
             },
-            {
-                size: "Large"
-            },
-            {
-                size: "X Large"
-            },
         ],
         colors: [
             {
-                red: "#F1FF00"
+                red: "#F1FF00" // Yellow
             },
             {
-                green: "#000"
+                blue: "#0000FF" // Blue
             },
             {
-                brown: "#FF0000"
-            },
+                green: "#008000" // Green
+            }
         ],
         reviews: reviews,
         imgUrls: [
@@ -460,25 +451,19 @@ const clothes = [
                 size: "Small"
             },
             {
-                size: "Medium"
-            },
-            {
-                size: "Large"
-            },
-            {
                 size: "X Large"
             },
         ],
         colors: [
             {
-                red: "#F1FF00"
+                red: "#FF0000" // Red
             },
             {
-                green: "#000"
+                blue: "#0000FF" // Blue
             },
             {
-                brown: "#FF0000"
-            },
+                green: "#008000" // Green
+            }
         ],
         reviews: reviews,
         imgUrls: [
