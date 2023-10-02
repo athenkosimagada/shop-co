@@ -21,6 +21,7 @@ const Arrivals = () => {
   const handleApplyFilter = () => {
     setApplyFilters(true);
     setPressed(false);
+    window.scrollTo(0, 0);
   };
 
   const maxPrice = Math.max(
