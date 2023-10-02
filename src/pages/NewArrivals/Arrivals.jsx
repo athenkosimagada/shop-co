@@ -20,6 +20,7 @@ const Arrivals = () => {
 
   const handleApplyFilter = () => {
     setApplyFilters(true);
+    setPressed(false);
   };
 
   const maxPrice = Math.max(
