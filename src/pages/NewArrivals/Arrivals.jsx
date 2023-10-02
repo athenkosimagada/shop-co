@@ -12,6 +12,11 @@ const Arrivals = () => {
   const [selectedColor, setSelectedColor] = useState("");
   const [selectedSize, setSelectedSize] = useState("");
   const [applyFilters, setApplyFilters] = useState(false);
+  const [pressed, setPressed] = useState(false);
+
+  const handleFilter = () => {
+    setPressed(!pressed);
+  };
 
   const handleApplyFilter = () => {
     setApplyFilters(true);
@@ -83,7 +88,7 @@ const Arrivals = () => {
     if (!applyFilters) {
       return true;
     }
-    
+
     if (
       selectedTypes.length === 0 &&
       selectedColor.length === 0 &&
@@ -107,7 +112,7 @@ const Arrivals = () => {
   };
 
   return (
-    <MainLayout>
+    <MainLayout isFilterActive={pressed}>
       <div className="arrivals">
         <div className="navigation">
           <Link to="/">
@@ -115,139 +120,158 @@ const Arrivals = () => {
           </Link>
           <p>New Arrivals</p>
         </div>
-        <div className="main">
-          <div className="filters">
-            <div className="filter">
-              <h3>Filters</h3>
-              <i className="fa-solid fa-filter"></i>
+        <div className="page">
+          <div className="alt-filters">
+            <h2>New Arrivals</h2>
+            <div className="alt-right">
+              <p>Showing 1-10 of 100 Products</p>
+              <i onClick={handleFilter} className="fa-solid fa-filter"></i>
             </div>
-            <div className="types">
-              {allTypes.map((type) => (
-                <div key={type} className="type-checkbox">
-                  <label>{type}</label>
-                  <input
-                    type="checkbox"
-                    value={type}
-                    checked={selectedTypes.includes(type)}
-                    onChange={() => handleTypeChange(type)}
-                  />
-                </div>
-              ))}
-            </div>
-            <div className="price-choice">
-              <h3>Price</h3>
-              <br />
-              <input
-                type="range"
-                min="0"
-                max={maxPrice}
-                step="1"
-                value={sliderValue[0]}
-                onChange={(e) =>
-                  setSliderValue([Number(e.target.value), sliderValue[1]])
-                }
-              />
-              <input
-                type="range"
-                min="0"
-                max={maxPrice}
-                step="1"
-                value={sliderValue[1]}
-                onChange={(e) =>
-                  setSliderValue([sliderValue[0], Number(e.target.value)])
-                }
-              />
-              <div className="spinner-price">
-                <span>${sliderValue[0]}</span>
-                <span>${sliderValue[1]}</span>
-              </div>
-            </div>
-            <h3>Colors</h3>
-            <div className="color-choices">
-              {allColors.map((color, index) => {
-                if (color) {
-                  const isSelected = color === selectedColor;
-                  return (
-                    <div
-                      key={index}
-                      className={`color-choice`}
-                      style={{
-                        backgroundColor: color,
-                        width: "30px",
-                        height: "30px",
-                        borderRadius: "50%",
-                        cursor: "pointer",
-                      }}
-                      onClick={() => handleColorChange(color)}
-                    >
-                      {isSelected && (
-                        <FaCheck
-                          className="check-icon"
-                          style={{
-                            marginBottom: "-8px",
-                            marginLeft: "7px",
-                            color: "white",
-                          }}
-                        />
-                      )}
-                    </div>
-                  );
-                }
-              })}
-            </div>
-            <h3>Sizes</h3>
-            <div className="size-choices">
-              {availableSizes.map((size) => (
-                <div
-                  key={size}
-                  className={`size-choice ${
-                    size === selectedSize ? "size-choice-c" : ""
-                  }`}
-                  onClick={() => handleSizeChange(size)}
-                >
-                  {size}
-                </div>
-              ))}
-            </div>
-            <h3>Dress Styles</h3>
-            <div className="dress-choices">
-              {allStyles.map((style) => (
-                <div key={style} className="type-checkbox">
-                  <label>{style}</label>
-                  <input
-                    type="checkbox"
-                    value={style}
-                    checked={selectedStyles.includes(style)}
-                    onChange={() => handleStyleChange(style)}
-                  />
-                </div>
-              ))}
-            </div>
-            <button
-              type="button"
-              className="apply-filter"
-              onClick={handleApplyFilter}
-            >
-              Apply Filter
-            </button>
           </div>
-          <div className="items">
-            {data.clothes
-              .filter(
-                (item, index) =>
-                  item.new === true && shouldDisplayItem(item, index)
-              )
-              .map((item) => (
-                <Link to={`/shop/${item.id}`} key={item.id}>
-                  <NewItem
-                    imgUrl={item.imgUrls[0].pic}
-                    title={item.title}
-                    price={item.price}
-                    rate={item.rate}
-                    discount={item.discount}
-                  />
-                </Link>
-              ))}
+          <div className="main">
+            <div className={"filters" + (pressed ? " show-filter" : "")}>
+              <div className="filter">
+                <h3>Filters</h3>
+                {window.innerWidth > 800 ? (
+                  <i className="fa-solid fa-filter"></i>
+                ) : (
+                  ""
+                )}
+                <i
+                  onClick={handleFilter}
+                  className={`fa-solid fa-xmark${
+                    window.innerWidth > 800 ? " show-icon" : ""
+                  }`}
+                ></i>
+              </div>
+              <div className="types">
+                {allTypes.map((type) => (
+                  <div key={type} className="type-checkbox">
+                    <label>{type}</label>
+                    <input
+                      type="checkbox"
+                      value={type}
+                      checked={selectedTypes.includes(type)}
+                      onChange={() => handleTypeChange(type)}
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="price-choice">
+                <h3>Price</h3>
+                <br />
+                <input
+                  type="range"
+                  min="0"
+                  max={maxPrice}
+                  step="1"
+                  value={sliderValue[0]}
+                  onChange={(e) =>
+                    setSliderValue([Number(e.target.value), sliderValue[1]])
+                  }
+                />
+                <input
+                  type="range"
+                  min="0"
+                  max={maxPrice}
+                  step="1"
+                  value={sliderValue[1]}
+                  onChange={(e) =>
+                    setSliderValue([sliderValue[0], Number(e.target.value)])
+                  }
+                />
+                <div className="spinner-price">
+                  <span>${sliderValue[0]}</span>
+                  <span>${sliderValue[1]}</span>
+                </div>
+              </div>
+              <h3>Colors</h3>
+              <div className="color-choices">
+                {allColors.map((color, index) => {
+                  if (color) {
+                    const isSelected = color === selectedColor;
+                    return (
+                      <div
+                        key={index}
+                        className={`color-choice`}
+                        style={{
+                          backgroundColor: color,
+                          width: "30px",
+                          height: "30px",
+                          borderRadius: "50%",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => handleColorChange(color)}
+                      >
+                        {isSelected && (
+                          <FaCheck
+                            className="check-icon"
+                            style={{
+                              marginBottom: "-8px",
+                              marginLeft: "7px",
+                              color: "white",
+                            }}
+                          />
+                        )}
+                      </div>
+                    );
+                  }
+                })}
+              </div>
+              <h3>Sizes</h3>
+              <div className="size-choices">
+                {availableSizes.map((size) => (
+                  <div
+                    key={size}
+                    className={`size-choice ${
+                      size === selectedSize ? "size-choice-c" : ""
+                    }`}
+                    onClick={() => handleSizeChange(size)}
+                  >
+                    {size}
+                  </div>
+                ))}
+              </div>
+              <h3>Dress Styles</h3>
+              <div className="dress-choices">
+                {allStyles.map((style) => (
+                  <div key={style} className="type-checkbox">
+                    <label>{style}</label>
+                    <input
+                      type="checkbox"
+                      value={style}
+                      checked={selectedStyles.includes(style)}
+                      onChange={() => handleStyleChange(style)}
+                    />
+                  </div>
+                ))}
+              </div>
+              <button
+                type="button"
+                className="apply-filter"
+                onClick={handleApplyFilter}
+              >
+                Apply Filter
+              </button>
+            </div>
+            <div className="items">
+              {data.clothes
+                .filter(
+                  (item, index) =>
+                    item.new === true && shouldDisplayItem(item, index)
+                )
+                .map((item) => (
+                  <Link to={`/shop/${item.id}`} key={item.id}>
+                    <NewItem
+                      imgUrl={item.imgUrls[0].pic}
+                      title={item.title}
+                      price={item.price}
+                      rate={item.rate}
+                      discount={item.discount}
+                    />
+                  </Link>
+                ))}
+            </div>
           </div>
         </div>
       </div>
