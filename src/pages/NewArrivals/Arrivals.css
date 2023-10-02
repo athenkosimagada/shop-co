@@ -169,7 +169,7 @@
         z-index: 99999;
     }
     
-   .page.show-filter-active {
+   .show-filter-active {
     overflow: hidden;
    }
 

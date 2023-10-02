@@ -5,7 +5,7 @@ import Footer from "../containers/Footer/Footer";
 
 const MainLayout = ({ children, isFilterActive }) => {
     return (
-      <div className={`page${isFilterActive ? 'show-filter-active' : ''}`}>
+      <div className={`${isFilterActive ? ' show-filter-active' : ''}`}>
         {isFilterActive && <div className="overlay"></div>}
         <Discount />
         <Navbar />
