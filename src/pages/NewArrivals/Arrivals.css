@@ -176,4 +176,8 @@
    .filter i.show-icon {
     display: none;
    }
+
+   .alt-filters {
+    font-size: 13px;
+   }
 }
