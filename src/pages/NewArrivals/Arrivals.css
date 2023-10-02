@@ -151,7 +151,7 @@
         inset: 0;
         top: 4%;
         z-index: 1000000;
-        transform: translateY(-1000px);
+        transform: translateY(-2000px);
         transition: all 0.6s;
     }
 
