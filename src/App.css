@@ -76,10 +76,7 @@ html {
 
 @media screen and (max-width: 800px) {
     .items {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .items a {
