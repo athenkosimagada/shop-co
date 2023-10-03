@@ -7,8 +7,12 @@
     gap: 1rem;
 }
 
-.items {
+.right-items {
     flex: 4;
+}
+
+.items {
+    width: 100%;
 }
 
 .items a {
@@ -142,6 +146,19 @@
 
 .filter i.show-icon {
     display: none;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.pagination button {
+    cursor: pointer;
+    padding: 0.5em 1em;
 }
 
 @media screen and (max-width: 800px) {
