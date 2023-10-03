@@ -1,0 +1,43 @@
+
+.pagination {
+    display: flex;
+    padding-top: 10px;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1em;
+}
+
+.pagination button {
+    width: max-content;
+    background: transparent;
+    border-radius: 5px;
+    border: 1px solid #0000005d;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.pagination p {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.pagination p.active {
+    background: #0000004a;
+    color: blue;
+    padding: 6px 13px;
+    border-radius: 5px;
+}
+
+.numbers-shown {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.prev-page {
+    margin-left: 10px;
+}
+
+.next-page {
+    margin-right: 10px;
+}
