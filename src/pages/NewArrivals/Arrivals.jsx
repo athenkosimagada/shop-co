@@ -71,7 +71,7 @@ const Arrivals = ({ data, currentPageName }) => {
     (item, index) => shouldDisplayItem(item, index) && true
   );
 
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+  const totalPages = Math.ceil(displayData.length / itemsPerPage);
 
   function calculateItemsPerPage() {
     const screenWidth = window.innerWidth;
@@ -93,7 +93,7 @@ const Arrivals = ({ data, currentPageName }) => {
   const indexOfFirstItem = (currentPage - 1) * itemsPerPage;
   const indexOfLastItem = Math.min(
     indexOfFirstItem + itemsPerPage,
-    data.length
+    displayData.length
   );
 
   const renderItems = displayData
@@ -128,7 +128,7 @@ const Arrivals = ({ data, currentPageName }) => {
           <Filter
             indexOfFirstItem={indexOfFirstItem}
             indexOfLastItem={indexOfLastItem}
-            totalFilteredItems={data}
+            totalFilteredItems={displayData}
             handleFilter={handleFilter}
             pressed={pressed}
             currentPageName={currentPageName}

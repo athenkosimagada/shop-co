@@ -35,6 +35,31 @@ const Pagination = ({
     }
   }
 
+  const currentPages = pages.map((page, index) =>
+    typeof page === "number" ? (
+      <button
+        key={index}
+        onClick={() => onPageChange(page)}
+        className={currentPage === page ? "active-page" : ""}
+        style={
+          currentPage === page
+            ? {
+                backgroundColor: "#007bff",
+                color: "#fff",
+                border: "1px solid #007bff",
+              }
+            : {}
+        }
+      >
+        {page}
+      </button>
+    ) : (
+      <span key={index} className="ellipsis">
+        {page}
+      </span>
+    )
+  );
+
   return (
     <div className="pagination">
       <button
@@ -44,32 +69,7 @@ const Pagination = ({
         <i className="fa-solid fa-arrow-right fa-flip-horizontal"></i>
         <span className="prev-page">Previous</span>
       </button>
-      <div className="numbers-shown">
-        {pages.map((page, index) =>
-          typeof page === "number" ? (
-            <button
-              key={index}
-              onClick={() => onPageChange(page)}
-              className={currentPage === page ? "active-page" : ""}
-              style={
-                currentPage === page
-                  ? {
-                      backgroundColor: "#007bff",
-                      color: "#fff",
-                      border: "1px solid #007bff",
-                    }
-                  : {}
-              }
-            >
-              {page}
-            </button>
-          ) : (
-            <span key={index} className="ellipsis">
-              {page}
-            </span>
-          )
-        )}
-      </div>
+      <div className="numbers-shown">{currentPages}</div>
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
