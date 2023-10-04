@@ -28,7 +28,7 @@ const Arrivals = ({ data, currentPageName }) => {
     setPressed(!pressed);
     setItemsPerPage(calculateItemsPerPage());
     setFilterDataArray(filterData);
-    setApplyFilters(!applyFilters);
+    setApplyFilters(true);
     setCurrentPage(1);
     window.scrollTo(0, 0);
   };
