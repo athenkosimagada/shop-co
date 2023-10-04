@@ -26,6 +26,7 @@ const Arrivals = ({ data, currentPageName }) => {
 
   const handleApplyFilter = (filterData) => {
     setPressed(!pressed);
+    setItemsPerPage(calculateItemsPerPage());
     setFilterDataArray(filterData);
     setApplyFilters(!applyFilters);
     setCurrentPage(1);
@@ -43,27 +44,35 @@ const Arrivals = ({ data, currentPageName }) => {
       filterDataArray.selectedSize.length === 0 &&
       filterDataArray.selectedStyles.length === 0
     ) {
-      return item.price >= filterDataArray.sliderValue[0] && item.price <= filterDataArray.sliderValue[1];
+      return (
+        item.price >= filterDataArray.sliderValue[0] &&
+        item.price <= filterDataArray.sliderValue[1]
+      );
     }
     return (
-      (filterDataArray.selectedTypes.length === 0 || filterDataArray.selectedTypes.includes(item.type)) &&
+      (filterDataArray.selectedTypes.length === 0 ||
+        filterDataArray.selectedTypes.includes(item.type)) &&
       (filterDataArray.selectedColor.length === 0 ||
         item.colors.some((colorObj) =>
-        filterDataArray.selectedColor.includes(Object.values(colorObj)[0])
+          filterDataArray.selectedColor.includes(Object.values(colorObj)[0])
         )) &&
       (filterDataArray.selectedSize.length === 0 ||
-        item.sizes.some((sizeItem) => filterDataArray.selectedSize === sizeItem.size)) &&
-      (filterDataArray.selectedStyles.length === 0 || filterDataArray.selectedStyles.includes(item.style)) &&
+        item.sizes.some(
+          (sizeItem) => filterDataArray.selectedSize === sizeItem.size
+        )) &&
+      (filterDataArray.selectedStyles.length === 0 ||
+        filterDataArray.selectedStyles.includes(item.style)) &&
       item.price >= filterDataArray.sliderValue[0] &&
       item.price <= filterDataArray.sliderValue[1]
     );
   };
 
-  const displayData = data.filter((item, index) => shouldDisplayItem(item, index) && true)
+  const displayData = data.filter(
+    (item, index) => shouldDisplayItem(item, index) && true
+  );
 
-  
   const totalPages = Math.ceil(data.length / itemsPerPage);
-  
+
   function calculateItemsPerPage() {
     const screenWidth = window.innerWidth;
     let numColumns = 3;
@@ -132,15 +141,19 @@ const Arrivals = ({ data, currentPageName }) => {
               handleFilter={handleFilter}
             />
             <div className="right-items">
-            {renderItems.length > 0 
-            ? <div className="items">{renderItems}</div>
-            : <p className="center">No items found!</p>}
+              {renderItems.length > 0 ? (
+                <div className="items">{renderItems}</div>
+              ) : (
+                <p className="center">No items found!</p>
+              )}
               <div className="pagination">
-                <Pagination
-                  currentPage={currentPage}
-                  totalPages={totalPages}
-                  onPageChange={handlePageChange}
-                />
+                {renderItems.length > 0 && (
+                  <Pagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onPageChange={handlePageChange}
+                  />
+                )}
               </div>
             </div>
           </div>

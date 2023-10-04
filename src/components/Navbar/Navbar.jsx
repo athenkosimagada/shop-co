@@ -25,7 +25,7 @@ const Navbar = () => {
             window.location.reload();
           }, 100);
           setReload(false);
-        }
+        }     
     }, [reload]);
 
     function handleLinkClick() {
