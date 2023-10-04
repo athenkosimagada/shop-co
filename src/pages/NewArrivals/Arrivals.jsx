@@ -25,7 +25,7 @@ const Arrivals = ({ data, currentPageName }) => {
   const [filterDataArray, setFilterDataArray] = useState([]);
 
   const handleApplyFilter = (filterData) => {
-    console.log(filterData);
+    setPressed(!pressed);
     setFilterDataArray(filterData);
     setApplyFilters(!applyFilters);
     setCurrentPage(1);
