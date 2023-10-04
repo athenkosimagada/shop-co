@@ -4,7 +4,7 @@
     padding-top: 10px;
     justify-content: space-between;
     width: 100%;
-    gap: 1em;
+    gap: 0.8em;
 }
 
 .pagination button {
@@ -24,14 +24,14 @@
 .pagination p.active {
     background: #0000004a;
     color: blue;
-    padding: 6px 13px;
+    padding: 6px 10px;
     border-radius: 5px;
 }
 
 .numbers-shown {
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: 0.8em;
 }
 
 .prev-page {
