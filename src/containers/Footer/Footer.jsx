@@ -12,7 +12,7 @@ const Footer = () => {
                 </div>
                 <div className="sub-right">
                     <div className="input-text">
-                        <i class="fa-regular fa-envelope"></i>
+                        <i className="fa-regular fa-envelope"></i>
                         <input type="email" name="email" id="email" placeholder="Enter your email address" />
                     </div>
                     
@@ -25,10 +25,10 @@ const Footer = () => {
                     <p>We have clothes that suits your style and 
                         which you’re proud to wear. From women to men.</p>
                     <div className="footer-socials">
-                        <i class="fa-brands fa-x-twitter"></i>
-                        <i class="fa-brands fa-facebook"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-github"></i>
+                        <i className="fa-brands fa-x-twitter"></i>
+                        <i className="fa-brands fa-facebook"></i>
+                        <i className="fa-brands fa-instagram"></i>
+                        <i className="fa-brands fa-github"></i>
                     </div>
                 </div>
                 <div className="links-content">

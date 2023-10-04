@@ -12,6 +12,11 @@
     flex: 4;
 }
 
+.center {
+    text-align: center;
+    padding-top: 5em;
+}
+
 .items {
     width: 100%;
 }

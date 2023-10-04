@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaCheck } from "react-icons/fa";
-import { data } from "../../constants";
 
-const Filters = ({ handleApplyFilter, pressed, handleFilter }) => {
+const Filters = ({ data, handleApplyFilter, pressed, handleFilter }) => {
   const [selectedStyles, setSelectedStyles] = useState([]);
   const [selectedTypes, setSelectedTypes] = useState([]);
   const [selectedColor, setSelectedColor] = useState("");
@@ -10,11 +9,11 @@ const Filters = ({ handleApplyFilter, pressed, handleFilter }) => {
 
   const allTypes = Array.from(
     new Set(
-      data.clothes.filter((item) => item.new === true).map((item) => item.type)
+      data.filter((item) => item.new === true).map((item) => item.type)
     )
   );
   const maxPrice = Math.max(
-    ...data.clothes
+    ...data
       .filter((item) => item.new === true)
       .map((item) => item.price),
     100
@@ -23,7 +22,7 @@ const Filters = ({ handleApplyFilter, pressed, handleFilter }) => {
 
   const allColors = [
     ...new Set(
-      data.clothes
+      data
         .filter((item) => item.new === true)
         .flatMap((item) =>
           item.colors.map((colorObj) => Object.values(colorObj)[0])
@@ -32,7 +31,7 @@ const Filters = ({ handleApplyFilter, pressed, handleFilter }) => {
   ];
   const availableSizes = [
     ...new Set(
-      data.clothes
+      data
         .filter((item) => item.new === true)
         .flatMap((item) => item.sizes.map((sizeObj) => sizeObj.size))
     ),
@@ -40,7 +39,7 @@ const Filters = ({ handleApplyFilter, pressed, handleFilter }) => {
 
   const allStyles = Array.from(
     new Set(
-      data.clothes.filter((item) => item.new === true).map((item) => item.style)
+      data.filter((item) => item.new === true).map((item) => item.style)
     )
   );
 
@@ -67,6 +66,17 @@ const Filters = ({ handleApplyFilter, pressed, handleFilter }) => {
 
   const handleSizeChange = (size) => {
     setSelectedSize(size === selectedSize ? "" : size);
+  };
+
+  const handleApplyFilterClick = () => {
+    const filterData = {
+      selectedStyles,
+      selectedTypes,
+      selectedColor,
+      selectedSize,
+      sliderValue,
+    };
+    handleApplyFilter(filterData);
   };
 
   return (
@@ -186,7 +196,7 @@ const Filters = ({ handleApplyFilter, pressed, handleFilter }) => {
       <button
         type="button"
         className="apply-filter"
-        onClick={handleApplyFilter}
+        onClick={handleApplyFilterClick}
       >
         Apply Filter
       </button>

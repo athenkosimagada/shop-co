@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import './Navbar.css';
 import { Link } from "react-router-dom";
@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
     const [pressed, setPressed] = useState(false);
     const [showShopLinks, setShowShopLinks] = useState(false);
-
+    const [reload, setReload] = useState(false);
+    
     function handClick() {
         setPressed(!pressed);
         if(!pressed) {
@@ -17,6 +18,20 @@ const Navbar = () => {
     function toggleShopLinks() {
         setShowShopLinks(!showShopLinks);
     }
+
+    useEffect(() => {
+        if (reload) {
+          setTimeout(() => {
+            window.location.reload();
+          }, 100);
+          setReload(false);
+        }
+    }, [reload]);
+
+    function handleLinkClick() {
+        setReload(true);
+    }
+
     return (
         <div className="navbar">
             <div className="nav-content">
@@ -38,14 +53,14 @@ const Navbar = () => {
                         </Link>
                         {showShopLinks && (
                             <div className="sub-menu">
-                                <Link to="/shop">All</Link>
-                                <Link to="/Men">Men</Link>
-                                <Link to="/Women">Women</Link>
+                                <Link to="/shop" onClick={handleLinkClick} >All</Link>
+                                <Link to="/Men" onClick={handleLinkClick} >Men</Link>
+                                <Link to="/Women" onClick={handleLinkClick} >Women</Link>
                             </div>
                         )}
-                        <Link to="/sale">On Sale</Link>
-                        <Link to="/arrivals">New Arrivals</Link>
-                        <Link to="/brands">Brands</Link>
+                        <Link to="/sale" onClick={handleLinkClick} >On Sale</Link>
+                        <Link to="/arrivals" onClick={handleLinkClick} >New Arrivals</Link>
+                        <Link to="/brands" onClick={handleLinkClick} >Brands</Link>
                     </div>
                 </div>
                 <div className="nav-right">

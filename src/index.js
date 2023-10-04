@@ -10,7 +10,7 @@ import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Brands from './pages/Brands/Brands';
 import Arrivals from './pages/NewArrivals/Arrivals';
 import Sale from './pages/Sale/Sale';
-
+import { data } from './constants';
 
 const router = createBrowserRouter([
   {
@@ -23,11 +23,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/sale",
-    element: <Sale />,
+    element: <Arrivals data={data.clothes.filter((item) => item.discount > 0)} currentPageName="On Sale" />,
   },
   {
     path: "/arrivals",
-    element: <Arrivals />,
+    element: <Arrivals data={data.clothes.filter((item) => item.new === true)} currentPageName="New Arrivals" />,
   },
   {
     path: "/brands",

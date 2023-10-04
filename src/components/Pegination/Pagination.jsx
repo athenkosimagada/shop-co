@@ -41,7 +41,7 @@ const Pagination = ({
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
-        <i class="fa-solid fa-arrow-right fa-flip-horizontal"></i>
+        <i className="fa-solid fa-arrow-right fa-flip-horizontal"></i>
         <span className="prev-page">Previous</span>
       </button>
       <div className="numbers-shown">
@@ -75,7 +75,7 @@ const Pagination = ({
         disabled={currentPage === totalPages}
       >
         <span className="next-page">Next</span>
-        <i class="fa-solid fa-arrow-right"></i>
+        <i className="fa-solid fa-arrow-right"></i>
       </button>
     </div>
   );

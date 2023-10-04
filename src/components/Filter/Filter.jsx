@@ -5,17 +5,18 @@ const Filter = ({
   indexOfLastItem,
   totalFilteredItems,
   handleFilter,
+  currentPageName
 }) => {
   return (
     <div className="alt-filters">
-      <h2>New Arrivals</h2>
+      <h2>{currentPageName}</h2>
       <div className="alt-right">
         <p>
           Showing {indexOfFirstItem + 1}-
           {Math.min(indexOfLastItem, totalFilteredItems.length)} of{" "}
           {totalFilteredItems.length} Products
         </p>
-        <i onClick={handleFilter} className="fa-solid fa-filter"></i>
+        {window.innerWidth <= 800 && <i onClick={handleFilter} className="fa-solid fa-filter"></i>}
       </div>
     </div>
   );
