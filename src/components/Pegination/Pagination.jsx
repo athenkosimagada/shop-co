@@ -5,10 +5,10 @@ const Pagination = ({
   currentPage,
   totalPages,
   onPageChange,
-  maxVisiblePages = 5,
+  maxVisiblePages = 4,
 }) => {
   const pages = [];
-  const halfMaxVisiblePages = Math.floor(maxVisiblePages / 2);
+  const halfMaxVisiblePages = Math.floor(maxVisiblePages / 2) - 1;
 
   for (let page = 1; page <= totalPages; page++) {
     if (

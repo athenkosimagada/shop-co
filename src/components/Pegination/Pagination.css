@@ -41,3 +41,17 @@
 .next-page {
     margin-right: 10px;
 }
+
+@media screen and (max-width: 800px) {
+    .next-page {
+        font-size: 12px;
+    }
+
+    .prev-page {
+        font-size: 12px;
+    }
+
+    .numbers-shown {
+        font-size: 12px;
+    }
+}
