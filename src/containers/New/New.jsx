@@ -45,7 +45,7 @@ const New = ({ data, topic, value, newData }) => {
         </div>
         <div className="bottom">
           <button className="view-button" type="button" onClick={handClick}>
-            View All
+            {pressed ? "View Less" :"View All"}
           </button>
         </div>
       </div>
