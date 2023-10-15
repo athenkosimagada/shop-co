@@ -119,10 +119,23 @@ const Arrivals = ({ data, currentPageName }) => {
     <MainLayout isFilterActive={pressed}>
       <div className="arrivals">
         <div className="navigation">
+          {currentPageName === "Men" || currentPageName === "Women" 
+          ?<>
+          <Link to="/">
+            <p>Home</p> <i className="fa-solid fa-chevron-right"></i>
+          </Link>
+          <Link to="/shop">
+            <p>Shop</p> <i className="fa-solid fa-chevron-right"></i>
+          </Link>
+          <p>{currentPageName}</p>
+          </>
+          :<>
           <Link to="/">
             <p>Home</p> <i className="fa-solid fa-chevron-right"></i>
           </Link>
           <p>{currentPageName}</p>
+          </>
+          }
         </div>
         <div className="page">
           <Filter

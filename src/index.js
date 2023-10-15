@@ -7,9 +7,7 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import ProductDetails from './pages/ProductDetails/ProductDetails';
-import Brands from './pages/Brands/Brands';
 import Arrivals from './pages/NewArrivals/Arrivals';
-import Sale from './pages/Sale/Sale';
 import { data } from './constants';
 
 const router = createBrowserRouter([
@@ -30,8 +28,16 @@ const router = createBrowserRouter([
     element: <Arrivals data={data.clothes.filter((item) => item.new === true)} currentPageName="New Arrivals" />,
   },
   {
-    path: "/brands",
-    element: <Brands />
+    path: "/shop",
+    element: <Arrivals data={data.clothes} currentPageName="Shop" />
+  },
+  {
+    path: "/shop/men",
+    element: <Arrivals data={data.clothes.filter((item) => item.gender === "Men")} currentPageName="Men" />
+  },
+  {
+    path: "/shop/women",
+    element: <Arrivals data={data.clothes.filter((item) => item.gender === "Women")} currentPageName="Women" />
   },
 ]);
 

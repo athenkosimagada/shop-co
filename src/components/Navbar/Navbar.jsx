@@ -54,13 +54,12 @@ const Navbar = () => {
                         {showShopLinks && (
                             <div className="sub-menu">
                                 <Link to="/shop" onClick={handleLinkClick} >All</Link>
-                                <Link to="/Men" onClick={handleLinkClick} >Men</Link>
-                                <Link to="/Women" onClick={handleLinkClick} >Women</Link>
+                                <Link to="/shop/men" onClick={handleLinkClick} >Men</Link>
+                                <Link to="/shop/women" onClick={handleLinkClick} >Women</Link>
                             </div>
                         )}
                         <Link to="/sale" onClick={handleLinkClick} >On Sale</Link>
                         <Link to="/arrivals" onClick={handleLinkClick} >New Arrivals</Link>
-                        <Link to="/brands" onClick={handleLinkClick} >Brands</Link>
                     </div>
                 </div>
                 <div className="nav-right">
