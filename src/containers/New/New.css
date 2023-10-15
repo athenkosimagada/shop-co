@@ -13,22 +13,18 @@
 
 .new-arrivals {
     display: flex;
-    flex-shrink: 0;
-    flex-grow: 0;
     gap: 1rem;
 
     overflow: hidden;
 }
 
-.show-all {
-    display: flex;
-    flex-shrink: 0;
-    flex-grow: 0;
-    justify-content: center;
-    gap: 1rem;
+.new-arrivals .new-item {
+    width: 300px;
+}
 
-    overflow: hidden;
-    flex-wrap: wrap;
+.show-all {
+    display: grid;
+    gap: 1rem;
 }
 
 .new-content {
@@ -40,7 +36,7 @@
 
 .new-content a {
     text-decoration: none;
-    color: #000;
+    color: #000000;
 }
 
 .view-button {
@@ -56,4 +52,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (min-width: 1150px) {
+    .show-all {
+        grid-template-columns: repeat(4, 1fr); /* 3 columns for big screens */
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .show-all {
+        grid-template-columns: repeat(3, 1fr); /* 2 columns for medium screens */
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .show-all {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 668px) {
+    .show-all {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

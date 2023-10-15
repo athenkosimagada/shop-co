@@ -79,9 +79,9 @@ const ProductDetails = () => {
           <div className="similar-clothes">
             {data.clothes
               .filter(
-                (item) =>
-                  item.type === data.clothes[params.id].type &&
-                  item.title !== data.clothes[params.id].title
+                (item, index) =>
+                  item.title !== data.clothes[params.id].title && 
+                  index < 5
               )
               .map((item) => (
                 <Link

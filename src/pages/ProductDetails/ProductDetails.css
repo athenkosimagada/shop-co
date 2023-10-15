@@ -10,9 +10,7 @@
 }
 
 .similar-clothes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
     gap: 1rem;
 }
 
@@ -53,8 +51,29 @@
     opacity: 0.6;
 }
 
+@media screen and (min-width: 1150px) {
+    .similar-clothes {
+        grid-template-columns: repeat(4, 1fr); /* 3 columns for big screens */
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .similar-clothes {
+        grid-template-columns: repeat(3, 1fr); /* 2 columns for medium screens */
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .similar-clothes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media screen and (max-width: 668px) {
     .reviews-content {
         grid-template-columns: 1fr;
+    }
+    .similar-clothes {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
