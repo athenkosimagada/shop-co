@@ -1,17 +1,31 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./New.css";
 import NewItem from "../../components/NewItem/NewItem";
 import { Link } from "react-router-dom";
 
 const New = ({ data, topic, value, newData }) => {
   const [pressed, setPressed] = useState(false);
+  const newContentRef = useRef(null);
+
   function handClick() {
     setPressed(!pressed);
+
+    if (newContentRef.current && pressed) {
+      newContentRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    } else {
+      newContentRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   }
 
   const borderStyle = value ? { borderBottom: "1px solid #a9a9a9" } : {};
   return (
-    <div className="new">
+    <div className="new" ref={newContentRef}>
       <h1>{topic}</h1>
       <div style={borderStyle} className="new-content">
         <div className={pressed ? "show-all" : "new-arrivals"}>
