@@ -9,6 +9,7 @@ import "./index.css";
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Arrivals from './pages/NewArrivals/Arrivals';
 import { data } from './constants';
+import Cart from './pages/Cart/Cart';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "/shop/women",
     element: <Arrivals data={data.clothes.filter((item) => item.gender === "Women")} currentPageName="Women" />
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
   },
 ]);
 

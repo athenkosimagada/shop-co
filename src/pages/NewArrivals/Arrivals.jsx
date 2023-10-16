@@ -45,8 +45,8 @@ const Arrivals = ({ data, currentPageName }) => {
       filterDataArray.selectedStyles.length === 0
     ) {
       return (
-        item.price >= filterDataArray.sliderValue[0] &&
-        item.price <= filterDataArray.sliderValue[1]
+        (item.price - item.price * item.discount) >= filterDataArray.sliderValue[0] &&
+        (item.price - item.price * item.discount) <= filterDataArray.sliderValue[1]
       );
     }
     return (
@@ -62,8 +62,8 @@ const Arrivals = ({ data, currentPageName }) => {
         )) &&
       (filterDataArray.selectedStyles.length === 0 ||
         filterDataArray.selectedStyles.includes(item.style)) &&
-      item.price >= filterDataArray.sliderValue[0] &&
-      item.price <= filterDataArray.sliderValue[1]
+      (item.price - item.price * item.discount) >= filterDataArray.sliderValue[0] &&
+      (item.price - item.price * item.discount) <= filterDataArray.sliderValue[1]
     );
   };
 

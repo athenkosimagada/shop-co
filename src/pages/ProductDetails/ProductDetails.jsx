@@ -45,7 +45,7 @@ const ProductDetails = () => {
           <p>{data.clothes[params.id].type}</p>
         </div>
         <Details
-          data={data.clothes[params.id]}
+          details={data.clothes[params.id]}
           current={data.clothes[params.id].imgUrls[0].pic}
         />
         <div className="product-reviews">

@@ -9,13 +9,12 @@ const Filters = ({ data, handleApplyFilter, pressed, handleFilter }) => {
 
   const allTypes = Array.from(
     new Set(
-      data.filter((item) => item.new === true).map((item) => item.type)
+      data.map((item) => item.type)
     )
   );
   const maxPrice = Math.max(
     ...data
-      .filter((item) => item.new === true)
-      .map((item) => item.price),
+      .map((item) => item.price - item.price * item.discount),
     100
   );
   const [sliderValue, setSliderValue] = useState([0, maxPrice]);
@@ -23,7 +22,6 @@ const Filters = ({ data, handleApplyFilter, pressed, handleFilter }) => {
   const allColors = [
     ...new Set(
       data
-        .filter((item) => item.new === true)
         .flatMap((item) =>
           item.colors.map((colorObj) => Object.values(colorObj)[0])
         )
@@ -32,14 +30,13 @@ const Filters = ({ data, handleApplyFilter, pressed, handleFilter }) => {
   const availableSizes = [
     ...new Set(
       data
-        .filter((item) => item.new === true)
         .flatMap((item) => item.sizes.map((sizeObj) => sizeObj.size))
     ),
   ];
 
   const allStyles = Array.from(
     new Set(
-      data.filter((item) => item.new === true).map((item) => item.style)
+      data.map((item) => item.style)
     )
   );
 
@@ -76,6 +73,8 @@ const Filters = ({ data, handleApplyFilter, pressed, handleFilter }) => {
       selectedSize,
       sliderValue,
     };
+    console.log(data);
+    console.log(filterData);
     handleApplyFilter(filterData);
   };
 

@@ -116,6 +116,22 @@
     cursor: pointer;
 }
 
+.icons a {
+    color: #000;
+    position: relative;
+}
+
+.icons #cart:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ff6464;
+    border-radius: 50%;
+    right: -5px;
+    top: 0px;
+}
+
 .hamburger {
     display: none;
 }

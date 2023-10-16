@@ -63,14 +63,17 @@ const clothes = [
         ],
         colors: [
             {
-                red: "#F1FF00"
-            },
-            {
-                green: "#000"
-            },
-            {
-                brown: "#FF0000"
-            },
+                name: "Red",
+                value: "#FF0000",
+              },
+              {
+                name: "Black",
+                value: "#000000",
+              },
+              {
+                name: "Blue",
+                value: "#0000FF",
+              },
         ],
         reviews: reviews,
         imgUrls: [
@@ -114,14 +117,17 @@ const clothes = [
         ],
         colors: [
             {
-                red: "#F1FF00"
-            },
-            {
-                green: "#000"
-            },
-            {
-                brown: "#FF0000"
-            },
+                name: "Red",
+                value: "#FF0000",
+              },
+              {
+                name: "Black",
+                value: "#000000",
+              },
+              {
+                name: "Blue",
+                value: "#0000FF",
+              },
         ],
         reviews: reviews,
         imgUrls: [
@@ -165,14 +171,17 @@ const clothes = [
         ],
         colors: [
             {
-                red: "#F1FF00"
-            },
-            {
-                green: "#000"
-            },
-            {
-                brown: "#FF0000"
-            },
+                name: "Red",
+                value: "#FF0000",
+              },
+              {
+                name: "Black",
+                value: "#000000",
+              },
+              {
+                name: "Blue",
+                value: "#0000FF",
+              },
         ],
         reviews: reviews,
         imgUrls: [
@@ -216,14 +225,17 @@ const clothes = [
         ],
         colors: [
             {
-                red: "#F1FF00"
-            },
-            {
-                green: "#000"
-            },
-            {
-                brown: "#FF0000"
-            },
+                name: "Red",
+                value: "#FF0000",
+              },
+              {
+                name: "Black",
+                value: "#000000",
+              },
+              {
+                name: "Blue",
+                value: "#0000FF",
+              },
         ],
         reviews: reviews,
         imgUrls: [
@@ -270,14 +282,17 @@ const clothes = [
         ],
         colors: [
             {
-                red: "#F1FF00"
-            },
-            {
-                green: "#000"
-            },
-            {
-                brown: "#FF0000"
-            },
+                name: "Red",
+                value: "#FF0000",
+              },
+              {
+                name: "Black",
+                value: "#000000",
+              },
+              {
+                name: "Blue",
+                value: "#0000FF",
+              },
         ],
         reviews: reviews,
         imgUrls: [
@@ -318,14 +333,17 @@ const clothes = [
         ],
         colors: [
             {
-                red: "#F1FF00"
-            },
-            {
-                green: "#000"
-            },
-            {
-                brown: "#FF0000"
-            },
+                name: "Red",
+                value: "#FF0000",
+              },
+              {
+                name: "Black",
+                value: "#000000",
+              },
+              {
+                name: "Blue",
+                value: "#0000FF",
+              },
         ],
         reviews: reviews,
         imgUrls: [
@@ -366,14 +384,17 @@ const clothes = [
         ],
         colors: [
             {
-                red: "#F1FF00"
-            },
-            {
-                green: "#000"
-            },
-            {
-                brown: "#FF0000"
-            },
+                name: "Red",
+                value: "#FF0000",
+              },
+              {
+                name: "Black",
+                value: "#000000",
+              },
+              {
+                name: "Blue",
+                value: "#0000FF",
+              },
         ],
         reviews: reviews,
         imgUrls: [
@@ -411,14 +432,17 @@ const clothes = [
         ],
         colors: [
             {
-                red: "#F1FF00" // Yellow
-            },
-            {
-                blue: "#0000FF" // Blue
-            },
-            {
-                green: "#008000" // Green
-            }
+                name: "Red",
+                value: "#FF0000",
+              },
+              {
+                name: "Black",
+                value: "#000000",
+              },
+              {
+                name: "Blue",
+                value: "#0000FF",
+              },
         ],
         reviews: reviews,
         imgUrls: [
@@ -456,14 +480,17 @@ const clothes = [
         ],
         colors: [
             {
-                red: "#FF0000" // Red
-            },
-            {
-                blue: "#0000FF" // Blue
-            },
-            {
-                green: "#008000" // Green
-            }
+                name: "Red",
+                value: "#FF0000",
+              },
+              {
+                name: "Black",
+                value: "#000000",
+              },
+              {
+                name: "Blue",
+                value: "#0000FF",
+              },
         ],
         reviews: reviews,
         imgUrls: [
@@ -479,5 +506,44 @@ const clothes = [
         ],
     }
 ];
-const data = { clothes, reviews };
+
+const cart = [
+    {
+        id: 0,
+        title:"ESS+ MARBLEIZED WOMEN'S TEE",
+        image: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/677206/01/fnd/ZAF/w/1000/h/1000/fmt/png",
+        size: "Large",
+        color: "White",
+        price: 145,
+        quantity: 2
+    },
+    {
+        id: 1,
+        title:"CLASSICS WOMEN'S FLARED LEGGINGS",
+        image: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/622183/99/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
+        size: "Small",
+        color: "Gray",
+        price: 115,
+        quantity: 5
+    }
+];
+
+const discounts = [
+    {
+        code: "123ABC",
+        discount: 0.2,
+        delivery: false
+    },
+    {
+        code: "246CBA",
+        discount: 0.15,
+        delivery: false
+    },
+    {
+        code: "123CBA",
+        discount: 0,
+        delivery: true
+    },
+];
+const data = { clothes, reviews, cart, discounts };
 export default data;

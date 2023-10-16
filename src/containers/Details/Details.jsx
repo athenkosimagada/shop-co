@@ -2,13 +2,34 @@ import React, { useState } from "react";
 import "./Details.css";
 
 import { FaStar, FaCheck,FaPlus, FaMinus } from "react-icons/fa";
+import { data } from "../../constants";
 
-function Details({ data, current }) {
+function Details({ details, current }) {
   const [image, setImage] = useState(current);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [selectedColorIndex, setSelectedColorIndex] = useState(0);
   const [selectedSizeIndex, setSelectedSizeIndex] = useState(0);
   const [count, setCount] = useState(1);
+
+  function handleAddToCart() {
+    // Retrieve the selected color and size based on the user's selections
+    const selectedColor = details.colors[selectedColorIndex].name;
+    const selectedSize = details.sizes[selectedSizeIndex].size;
+  
+    // Create a new cart item object
+    const cartItem = {
+      title: details.title,
+      image: details.imgUrls[0].pic,
+      size: selectedSize,
+      color: selectedColor,
+      price: details.discount > 0 ? details.price - details.price * details.discount : details.price,
+      quantity: count,
+    };
+  
+    // Push the new cart item to the data.cart array
+    data.cart.push(cartItem);
+  }  
+  
 
   function handleImageClick(newImage, index) {
     setImage(newImage);
@@ -33,8 +54,8 @@ function Details({ data, current }) {
   }
 
   // Rating code
-  const fullStars = Math.floor(data.rate);
-  const decimalPart = data.rate - fullStars;
+  const fullStars = Math.floor(details.rate);
+  const decimalPart = details.rate - fullStars;
 
   const stars = [];
 
@@ -63,7 +84,7 @@ function Details({ data, current }) {
     <div className="details">
       <div className="images">
         <div className="img-3">
-          {data.imgUrls.map((img, index) => (
+          {details.imgUrls.map((img, index) => (
             <div> 
               <img
               key={index}
@@ -80,30 +101,30 @@ function Details({ data, current }) {
         </div>
       </div>
       <div className="product-detail">
-        <h1>{data.title}</h1>
+        <h1>{details.title}</h1>
         <div className="rate">
           <div className="star-rating">{stars}</div>
-          <p>{data.rate.toFixed(1)}/5</p>
+          <p>{details.rate.toFixed(1)}/5</p>
         </div>
 
         <div className="price">
-          {data.discount > 0 ? (
+          {details.discount > 0 ? (
             <>
-              <h3>${(data.price - data.price * data.discount).toFixed(2)}</h3>
-              <h3 className="original">${data.price.toFixed(2)}</h3>
+              <h3>${(details.price - details.price * details.discount).toFixed(2)}</h3>
+              <h3 className="original">${details.price.toFixed(2)}</h3>
               <p className="discount-price">
-                {-(data.discount * 100).toFixed(0)}%
+                {-(details.discount * 100).toFixed(0)}%
               </p>
             </>
           ) : (
-            <h3>${data.price.toFixed(2)}</h3>
+            <h3>${details.price.toFixed(2)}</h3>
           )}
         </div>
-        <p>{data.description}</p>
+        <p>{details.description}</p>
         <div className="container">
           <p>Select Colors</p>
           <div className="colors">
-            {data.colors.map((color, index) => (
+            {details.colors.map((color, index) => (
               <div
                 key={index}
                 className="color"
@@ -134,7 +155,7 @@ function Details({ data, current }) {
         <div className="container">
           <p>Select Size</p>
           <div className="sizes">
-            {data.sizes.map((size, index) => (
+            {details.sizes.map((size, index) => (
               <div
                 key={index}
                 className={`size ${
@@ -154,7 +175,7 @@ function Details({ data, current }) {
               <p>{count}</p>
               <FaPlus className="btn-change" onClick={incrementCount} />
           </div>
-          <button type="button" className="btn-addcart">Add to Cart</button>
+          <button type="button" className="btn-addcart" onClick={handleAddToCart}>Add to Cart</button>
         </div>
       </div>
     </div>
