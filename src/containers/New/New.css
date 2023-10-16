@@ -14,9 +14,28 @@
 .new-arrivals {
     display: flex;
     gap: 1rem;
-
-    overflow: hidden;
+    overflow-x: scroll; /* Use 'scroll' for scrollable content */
+    scrollbar-width: none; /* Hide Firefox scrollbars */
+    -webkit-overflow-scrolling: touch;
+    grid-template-columns: repeat(4, 1fr); /* Set the desired number of columns */
+    /* Hide scrollbar for Webkit (Chrome, Safari) */
+    &::-webkit-scrollbar {
+        width: 0.1rem;
+        height: 0.1rem;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    /* Custom styles to hide the scrollbar in other browsers */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
 }
+
 
 .new-arrivals .new-item {
     width: 300px;
