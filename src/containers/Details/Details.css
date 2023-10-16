@@ -130,7 +130,7 @@
 }
 
 .cart-popup {
-    position: absolute;
+    position: fixed;
     border-radius: 8px;
     background: #ffffff;
     color: #000000;
