@@ -12,6 +12,20 @@ function Cart() {
   const [discountPercetange, setDiscountPercetange] = useState(0);
   const [promoCode, setPromoCode] = useState("");
 
+  // Load cart from local storage when the component mounts
+  useEffect(() => {
+    const cartFromLocalStorage = localStorage.getItem("cart");
+    if (cartFromLocalStorage) {
+      const parsedCart = JSON.parse(cartFromLocalStorage);
+      data.cart = parsedCart;
+      recalculateTotals();
+    }
+  }, []);
+
+  function saveCartToLocalStorage(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+
   useEffect(() => {
     recalculateTotals();
   }, []);
@@ -52,12 +66,20 @@ function Cart() {
       temp += item.price * item.quantity;
     });
     setSubTotal(temp);
+    // Save the updated cart to local storage
+    saveCartToLocalStorage(data.cart);
   }
 
   const items = data.cart.map((item, index) => (
     <div className="cart-item" key={index}>
       <div className="cart-img">
-        <img src={item.image} alt="Clothes" />
+        <Link
+          to={`/shop/${item.id}`}
+          key={item.id}
+          style={{ color: "#000", textDecoration: "none" }}
+        >
+          <img src={item.image} alt="Clothes" />
+        </Link>
       </div>
       <div className="cart-details">
         <div className="cart-detail">
@@ -70,16 +92,26 @@ function Cart() {
               Color: <span>{item.color}</span>
             </p>
           </div>
-          <div className="cart-detail_right" key={index} onClick={() => handleDelete(item.id)}>
+          <div
+            className="cart-detail_right"
+            key={index}
+            onClick={() => handleDelete(item.id)}
+          >
             <i className="fa-solid fa-trash"></i>
           </div>
         </div>
         <div className="cart-item_btm">
           <h1>${item.price}</h1>
           <div className="quantity-changer">
-            <FaMinus className="btn-change" onClick={() => decrementCount(index)} />
+            <FaMinus
+              className="btn-change"
+              onClick={() => decrementCount(index)}
+            />
             <p>{item.quantity}</p>
-            <FaPlus className="btn-change" onClick={() => incrementCount(index)} />
+            <FaPlus
+              className="btn-change"
+              onClick={() => incrementCount(index)}
+            />
           </div>
         </div>
       </div>
@@ -113,7 +145,9 @@ function Cart() {
                 </div>
                 <div className="amount-type">
                   <p>Discount(- {discountPercetange * 100}%)</p>
-                  <h4 className="discount-price_cart">-${subTotal * discountPercetange}</h4>
+                  <h4 className="discount-price_cart">
+                    -${subTotal * discountPercetange}
+                  </h4>
                 </div>
                 <div className="amount-type">
                   <p>Delivery Fee</p>
@@ -122,7 +156,9 @@ function Cart() {
               </div>
               <div className="total">
                 <p>Total</p>
-                <h3>${subTotal - subTotal * discountPercetange + deliveryFee}</h3>
+                <h3>
+                  ${subTotal - subTotal * discountPercetange + deliveryFee}
+                </h3>
               </div>
               <div className="dicount">
                 <div className="cart-input">

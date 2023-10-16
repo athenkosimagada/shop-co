@@ -7,6 +7,7 @@ const Navbar = () => {
   const [pressed, setPressed] = useState(false);
   const [showShopLinks, setShowShopLinks] = useState(false);
   const [reload, setReload] = useState(false);
+  const [cartLength, setCartLength] = useState(data.cart.length);
 
   function handClick() {
     setPressed(!pressed);
@@ -27,6 +28,15 @@ const Navbar = () => {
       setReload(false);
     }
   }, [reload]);
+
+  useEffect(() => {
+    // Read cart length from local storage and set it to the state
+    const cartFromLocalStorage = localStorage.getItem("cart");
+    if (cartFromLocalStorage) {
+      const parsedCart = JSON.parse(cartFromLocalStorage);
+      setCartLength(parsedCart.length);
+    }
+  }, [JSON.parse(localStorage.getItem("cart")).length]);
 
   function handleLinkClick() {
     setReload(true);
@@ -90,7 +100,7 @@ const Navbar = () => {
             <Link to="/cart" onClick={handleLinkClick}>
               <i
                 className="fa-solid fa-cart-shopping"
-                id={data.cart.length > 0 ? "cart" : undefined}
+                id={cartLength  > 0 ? "cart" : undefined}
               ></i>
             </Link>
 
