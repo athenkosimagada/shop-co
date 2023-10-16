@@ -170,7 +170,7 @@
 }
 
 @media screen and (max-width: 668px) {
-    .cart-container {
+    .cart-item{
         font-size: 13px;
     }
 
@@ -191,7 +191,7 @@
 }
 
 @media screen and (max-width: 468px) {
-    .cart-container {
-        font-size: 10px;
+    .cart-item {
+        font-size: 11px;
     }
 }
