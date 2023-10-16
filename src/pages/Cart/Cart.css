@@ -5,6 +5,7 @@
 .cart-container {
     display: flex;
     gap: 1rem;
+    margin-top: 1em;
 }
 
 .cart-left {
