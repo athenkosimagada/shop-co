@@ -28,15 +28,15 @@ const Navbar = () => {
       setReload(false);
     }
   }, [reload]);
-
+  const parsedCart = data.cart;
   useEffect(() => {
     // Read cart length from local storage and set it to the state
     const cartFromLocalStorage = localStorage.getItem("cart");
     if (cartFromLocalStorage) {
-      const parsedCart = JSON.parse(cartFromLocalStorage);
+      parsedCart = JSON.parse(cartFromLocalStorage);
       setCartLength(parsedCart.length);
     }
-  }, [JSON.parse(localStorage.getItem("cart")).length]);
+  }, [parsedCart.length]);
 
   function handleLinkClick() {
     setReload(true);
