@@ -39,7 +39,7 @@ const ProductDetails = () => {
           <Link to="/shop">
             <p>Shop</p> <i className="fa-solid fa-chevron-right"></i>
           </Link>
-          <Link to={`/${data.clothes[params.id].gender}`}>
+          <Link to={`/shop/${data.clothes[params.id].gender.toLowerCase()}`}>
             <p>{data.clothes[params.id].gender}</p> <i className="fa-solid fa-chevron-right"></i>
           </Link>
           <p>{data.clothes[params.id].type}</p>
