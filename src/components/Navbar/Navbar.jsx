@@ -12,11 +12,26 @@ const Navbar = () => {
   const [list, setList] = useState([]);
   const [text, setText] = useState("");
   const [showPopup, setShowPopup] = useState(false);
+  const [showInput, setShowInput] = useState(false);
 
   const navigate = useNavigate();
 
+  function handlePressSearch() {
+    if(list.length == 0 && !showInput) {
+      setShowInput(true);
+      return;
+    }
+    navigate({
+      pathname: "/search_results",
+      search: `?searchTerm=${encodeURIComponent(text)}`, // Encode the search term
+    });
+    setShowPopup(false);
+    setShowInput(false);
+    window.location.reload();
+  }
+
   function handleChange(value) {
-    setText(value)
+    setText(value);
     const filteredItems = data.clothes.filter((item) =>
       item.title.toLowerCase().includes(value.toLowerCase())
     );
@@ -33,6 +48,7 @@ const Navbar = () => {
         search: `?searchTerm=${encodeURIComponent(text)}`, // Encode the search term
       });
       setShowPopup(false);
+      window.location.reload();
     }
   }
 
@@ -48,6 +64,23 @@ const Navbar = () => {
   }
 
   useEffect(() => {
+    const handleResize = () => {
+      setShowInput(window.innerWidth <= 750);
+    };
+
+    // Initial setup
+    handleResize();
+
+    // Listen for window resize events
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
     if (reload) {
       setTimeout(() => {
         window.location.reload();
@@ -55,7 +88,8 @@ const Navbar = () => {
       setReload(false);
     }
   }, [reload]);
-  const effect = useEffect(() => {
+  
+  useEffect(() => {
     setCartLength(data.cart.length);
   }, [data.cart.length]);
 
@@ -69,7 +103,7 @@ const Navbar = () => {
         <div className="popup">
           <h2>Search results</h2>
           <div className="results_items">
-            {list.map((item) => (
+            {list.length > 0 ? list.map((item) => (
               <Link
                 onClick={() => {
                   setShowPopup(false);
@@ -88,7 +122,7 @@ const Navbar = () => {
                   discount={item.discount}
                 />
               </Link>
-            ))}
+            )) : <p>NO results found!</p>}
           </div>
         </div>
       )}
@@ -135,8 +169,12 @@ const Navbar = () => {
           </div>
         </div>
         <div className="nav-right">
-          <div className="seach-bar">
-            <i className="fa-solid fa-magnifying-glass"></i>
+          <div className={showInput ? "seach-bar_mobile" :"seach-bar"}>
+            <i
+              onClick={window.innerWidth <= 750 && handlePressSearch}
+              className="fa-solid fa-magnifying-glass"
+            ></i>
+            {showInput && <button onClick={() => setShowInput(!showInput)} type="button">Cancel</button>}
             <input
               type="text"
               name="product"
@@ -145,6 +183,7 @@ const Navbar = () => {
               onChange={(e) => handleChange(e.target.value)}
               placeholder="Search for products..."
             />
+            
           </div>
           <div className="icons">
             <Link to="/cart" onClick={handleLinkClick}>

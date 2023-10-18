@@ -10,7 +10,7 @@ function Details({ details, current }) {
   const [selectedColorIndex, setSelectedColorIndex] = useState(0);
   const [selectedSizeIndex, setSelectedSizeIndex] = useState(0);
   const [count, setCount] = useState(1);
-
+ 
   // Load cart from local storage when the component mounts
   useEffect(() => {
     const cartFromLocalStorage = localStorage.getItem("cart_items");

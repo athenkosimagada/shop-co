@@ -86,12 +86,12 @@
     gap: 2rem;
 }
 
-.seach-bar {
+.seach-bar, .seach-bar_mobile {
     position: relative;
     flex: 1;
 }
 
-.seach-bar input {
+.seach-bar input, .seach-bar_mobile input {
     border-radius: 62px;
     border: none;
 
@@ -240,19 +240,64 @@
     }
 
     .seach-bar {
+        position: static;
         flex: 0;
         justify-content: center;
         align-items: center;
     }
 
     .seach-bar input {
-        display: none;
+       display: none;
     }
 
-    .seach-bar i {
+    /* .seach-bar i {
         position: relative;
         inset: 0;
         color: #000;
         cursor: pointer;
+    } */
+
+    .seach-bar_mobile {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 70px;
+        width: 90%;
+        margin: 0 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        z-index: 9999999;
+    }
+
+    .seach-bar i {
+        position: relative;
+        top: 0;
+        margin-right: 0.5em;
+        color: #000;
+        cursor: pointer;
+    }
+
+
+    .seach-bar_mobile input {
+        display: block;
+        padding-left: 1.5em;
+    }
+
+    .seach-bar_mobile i {
+        position: absolute;
+        right: 1em;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    .seach-bar_mobile button {
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        margin-right: 1em;
+        background: transparent;
+        color: #0000007e;
     }
 }

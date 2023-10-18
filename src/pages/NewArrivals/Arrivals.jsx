@@ -14,7 +14,7 @@ const Arrivals = ({ data, currentPageName }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(calculateItemsPerPage());
   const [filterDataArray, setFilterDataArray] = useState([]);
-
+ 
   const location = useLocation();
   let listData = [];
 
