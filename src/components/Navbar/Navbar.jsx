@@ -17,7 +17,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   function handlePressSearch() {
-    if( window.innerWidth <= 750) {
+    if (window.innerWidth <= 750) {
       if (list.length == 0 && !showInput) {
         setShowInput(true);
         return;
@@ -67,17 +67,19 @@ const Navbar = () => {
   }
 
   useEffect(() => {
-    const  handleResize = () => {
-      setShowInput(window.innerWidth <= 750);
-    };
+    if (window.innerWidth > 750) {
+      const handleResize = () => {
+        setShowInput(window.innerWidth <= 750);
+      };
 
-    // Listen for window resize events
-    window.addEventListener("resize", handleResize);
+      // Listen for window resize events
+      window.addEventListener("resize", handleResize);
 
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+      // Clean up the event listener when the component unmounts
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
   }, []);
 
   useEffect(() => {
