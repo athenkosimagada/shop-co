@@ -72,7 +72,7 @@ const Pagination = ({
       <div className="numbers-shown">{currentPages}</div>
       <button
         onClick={() => onPageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
+        disabled={currentPage === totalPages && window.scrollTo(0, 0)}
       >
         <span className="next-page">Next</span>
         <i className="fa-solid fa-arrow-right"></i>
