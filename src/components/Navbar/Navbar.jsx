@@ -17,17 +17,19 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   function handlePressSearch() {
-    if(list.length == 0 && !showInput) {
-      setShowInput(true);
-      return;
+    if( window.innerWidth <= 750) {
+      if (list.length == 0 && !showInput) {
+        setShowInput(true);
+        return;
+      }
+      navigate({
+        pathname: "/search_results",
+        search: `?searchTerm=${encodeURIComponent(text)}`, // Encode the search term
+      });
+      setShowPopup(false);
+      setShowInput(false);
+      window.location.reload();
     }
-    navigate({
-      pathname: "/search_results",
-      search: `?searchTerm=${encodeURIComponent(text)}`, // Encode the search term
-    });
-    setShowPopup(false);
-    setShowInput(false);
-    window.location.reload();
   }
 
   function handleChange(value) {
@@ -48,6 +50,7 @@ const Navbar = () => {
         search: `?searchTerm=${encodeURIComponent(text)}`, // Encode the search term
       });
       setShowPopup(false);
+      setShowInput(false);
       window.location.reload();
     }
   }
@@ -64,12 +67,9 @@ const Navbar = () => {
   }
 
   useEffect(() => {
-    const handleResize = () => {
+    const  handleResize = () => {
       setShowInput(window.innerWidth <= 750);
     };
-
-    // Initial setup
-    handleResize();
 
     // Listen for window resize events
     window.addEventListener("resize", handleResize);
@@ -88,7 +88,7 @@ const Navbar = () => {
       setReload(false);
     }
   }, [reload]);
-  
+
   useEffect(() => {
     setCartLength(data.cart.length);
   }, [data.cart.length]);
@@ -103,26 +103,30 @@ const Navbar = () => {
         <div className="popup">
           <h2>Search results</h2>
           <div className="results_items">
-            {list.length > 0 ? list.map((item) => (
-              <Link
-                onClick={() => {
-                  setShowPopup(false);
-                  setTimeout(() => {
-                    window.location.reload();
-                  }, 100);
-                }}
-                to={`/shop/${item.id}`}
-                key={item.id}
-              >
-                <NewItem
-                  imgUrl={item.imgUrls[0].pic}
-                  title={item.title}
-                  price={item.price}
-                  rate={item.rate}
-                  discount={item.discount}
-                />
-              </Link>
-            )) : <p>NO results found!</p>}
+            {list.length > 0 ? (
+              list.map((item) => (
+                <Link
+                  onClick={() => {
+                    setShowPopup(false);
+                    setTimeout(() => {
+                      window.location.reload();
+                    }, 100);
+                  }}
+                  to={`/shop/${item.id}`}
+                  key={item.id}
+                >
+                  <NewItem
+                    imgUrl={item.imgUrls[0].pic}
+                    title={item.title}
+                    price={item.price}
+                    rate={item.rate}
+                    discount={item.discount}
+                  />
+                </Link>
+              ))
+            ) : (
+              <p>NO results found!</p>
+            )}
           </div>
         </div>
       )}
@@ -169,12 +173,16 @@ const Navbar = () => {
           </div>
         </div>
         <div className="nav-right">
-          <div className={showInput ? "seach-bar_mobile" :"seach-bar"}>
+          <div className={showInput ? "seach-bar_mobile" : "seach-bar"}>
             <i
-              onClick={window.innerWidth <= 750 && handlePressSearch}
+              onClick={() => handlePressSearch()}
               className="fa-solid fa-magnifying-glass"
             ></i>
-            {showInput && <button onClick={() => setShowInput(!showInput)} type="button">Cancel</button>}
+            {showInput && (
+              <button onClick={() => setShowInput(!showInput)} type="button">
+                Cancel
+              </button>
+            )}
             <input
               type="text"
               name="product"
@@ -183,7 +191,6 @@ const Navbar = () => {
               onChange={(e) => handleChange(e.target.value)}
               placeholder="Search for products..."
             />
-            
           </div>
           <div className="icons">
             <Link to="/cart" onClick={handleLinkClick}>
