@@ -6,12 +6,26 @@ import NewItem from "../../components/NewItem/NewItem";
 import Filters from "../../components/Filters/Filters";
 import Filter from "../../components/Filter/Filter";
 import Pagination from "../../components/Pegination/Pagination";
+import { useLocation } from "react-router-dom";
 
 const Arrivals = ({ data, currentPageName }) => {
   const [pressed, setPressed] = useState(false);
   const [applyFilters, setApplyFilters] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(calculateItemsPerPage());
+  const [filterDataArray, setFilterDataArray] = useState([]);
+
+  const location = useLocation();
+  let listData = [];
+
+  if (currentPageName !== "Search Results") {
+    listData = data;
+  } else {
+    
+    const searchParams = new URLSearchParams(location.search);
+    const searchTerm = searchParams.get("searchTerm");
+    listData = data.filter((item) => item.title.toLowerCase().includes(searchTerm.toLowerCase()));
+  }
 
   useEffect(() => {
     setApplyFilters(false);
@@ -21,8 +35,6 @@ const Arrivals = ({ data, currentPageName }) => {
   const handleFilter = () => {
     setPressed(!pressed);
   };
-
-  const [filterDataArray, setFilterDataArray] = useState([]);
 
   const handleApplyFilter = (filterData) => {
     setPressed(!pressed);
@@ -45,8 +57,10 @@ const Arrivals = ({ data, currentPageName }) => {
       filterDataArray.selectedStyles.length === 0
     ) {
       return (
-        (item.price - item.price * item.discount) >= filterDataArray.sliderValue[0] &&
-        (item.price - item.price * item.discount) <= filterDataArray.sliderValue[1]
+        item.price - item.price * item.discount >=
+          filterDataArray.sliderValue[0] &&
+        item.price - item.price * item.discount <=
+          filterDataArray.sliderValue[1]
       );
     }
     return (
@@ -62,12 +76,13 @@ const Arrivals = ({ data, currentPageName }) => {
         )) &&
       (filterDataArray.selectedStyles.length === 0 ||
         filterDataArray.selectedStyles.includes(item.style)) &&
-      (item.price - item.price * item.discount) >= filterDataArray.sliderValue[0] &&
-      (item.price - item.price * item.discount) <= filterDataArray.sliderValue[1]
+      item.price - item.price * item.discount >=
+        filterDataArray.sliderValue[0] &&
+      item.price - item.price * item.discount <= filterDataArray.sliderValue[1]
     );
   };
 
-  const displayData = data.filter(
+  const displayData = listData.filter(
     (item, index) => shouldDisplayItem(item, index) && true
   );
 
@@ -119,23 +134,24 @@ const Arrivals = ({ data, currentPageName }) => {
     <MainLayout isFilterActive={pressed}>
       <div className="arrivals">
         <div className="navigation">
-          {currentPageName === "Men" || currentPageName === "Women" 
-          ?<>
-          <Link to="/">
-            <p>Home</p> <i className="fa-solid fa-chevron-right"></i>
-          </Link>
-          <Link to="/shop">
-            <p>Shop</p> <i className="fa-solid fa-chevron-right"></i>
-          </Link>
-          <p>{currentPageName}</p>
-          </>
-          :<>
-          <Link to="/">
-            <p>Home</p> <i className="fa-solid fa-chevron-right"></i>
-          </Link>
-          <p>{currentPageName}</p>
-          </>
-          }
+          {currentPageName === "Men" || currentPageName === "Women" ? (
+            <>
+              <Link to="/">
+                <p>Home</p> <i className="fa-solid fa-chevron-right"></i>
+              </Link>
+              <Link to="/shop">
+                <p>Shop</p> <i className="fa-solid fa-chevron-right"></i>
+              </Link>
+              <p>{currentPageName}</p>
+            </>
+          ) : (
+            <>
+              <Link to="/">
+                <p>Home</p> <i className="fa-solid fa-chevron-right"></i>
+              </Link>
+              <p>{currentPageName}</p>
+            </>
+          )}
         </div>
         <div className="page">
           <Filter
@@ -148,7 +164,7 @@ const Arrivals = ({ data, currentPageName }) => {
           />
           <div className="main">
             <Filters
-              data={data}
+              data={listData}
               handleApplyFilter={handleApplyFilter}
               pressed={pressed}
               handleFilter={handleFilter}

@@ -510,6 +510,7 @@ const clothes = [
 const cart = [
     {
         id: 0,
+        clotheId: 8,
         title:"ESS+ MARBLEIZED WOMEN'S TEE",
         image: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/677206/01/fnd/ZAF/w/1000/h/1000/fmt/png",
         size: "Large",
@@ -519,6 +520,7 @@ const cart = [
     },
     {
         id: 1,
+        clotheId: 7,
         title:"CLASSICS WOMEN'S FLARED LEGGINGS",
         image: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/622183/99/bv/fnd/ZAF/w/1000/h/1000/fmt/png",
         size: "Small",

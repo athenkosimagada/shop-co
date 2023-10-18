@@ -44,6 +44,10 @@ const router = createBrowserRouter([
     path: "/cart",
     element: <Cart />,
   },
+  {
+    path: "/search_results",
+    element: <Arrivals data={data.clothes} currentPageName="Search Results"/>,
+  },
 ]);
 
 ReactDOM.render(

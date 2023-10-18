@@ -6,7 +6,6 @@ import { data } from "../../constants";
 import { FaMinus, FaPlus } from "react-icons/fa";
 
 function Cart() {
-  const [count, setCount] = useState(1);
   const [subTotal, setSubTotal] = useState(0);
   const [deliveryFee, setDeliveryFee] = useState(15);
   const [discountPercetange, setDiscountPercetange] = useState(0);
@@ -14,7 +13,7 @@ function Cart() {
 
   // Load cart from local storage when the component mounts
   useEffect(() => {
-    const cartFromLocalStorage = localStorage.getItem("cart");
+    const cartFromLocalStorage = localStorage.getItem("cart_items");
     if (cartFromLocalStorage) {
       const parsedCart = JSON.parse(cartFromLocalStorage);
       data.cart = parsedCart;
@@ -23,11 +22,12 @@ function Cart() {
   }, []);
 
   function saveCartToLocalStorage(cart) {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cart_items", JSON.stringify(cart));
   }
 
   useEffect(() => {
     recalculateTotals();
+    console.log(data.cart);
   }, []);
 
   function applyCode() {
@@ -74,8 +74,7 @@ function Cart() {
     <div className="cart-item" key={index}>
       <div className="cart-img">
         <Link
-          to={`/shop/${item.id}`}
-          key={item.id}
+          to={`/shop/${item.clotheId}`}
           style={{ color: "#000", textDecoration: "none" }}
         >
           <img src={item.image} alt="Clothes" />

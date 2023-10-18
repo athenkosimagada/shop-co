@@ -1,5 +1,6 @@
 .navbar {
     padding: 1rem 5%;
+    position: relative;
 }
 
 .nav-content {
@@ -97,7 +98,7 @@
     background: #F0F0F0;
     padding: 12px 16px;
     padding-left: 40px;
-    width: 90%;
+    width: 100%;
 }
 
 .seach-bar i {
@@ -110,6 +111,7 @@
 .nav-right .icons {
     display: flex;
     gap: 1rem;
+    font-size: 1.2em;
 }
 
 .icons i {
@@ -134,6 +136,53 @@
 
 .hamburger {
     display: none;
+}
+
+.popup {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 90%;
+    background: #fff;
+    box-shadow: 3px 4px 4px rgba(174, 174, 174, 0.5);
+    padding: 1em;
+    margin: 0 5%;
+    z-index: 100000;
+}
+
+.results_items {
+    display: grid;
+    gap: 1rem;
+}
+
+.results_items a {
+    text-decoration: none;
+    color: #000;
+}
+
+@media screen and (min-width: 1150px) {
+    .results_items {
+        grid-template-columns: repeat(4, 1fr); /* 3 columns for big screens */
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .results_items {
+        grid-template-columns: repeat(3, 1fr); /* 2 columns for medium screens */
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .results_items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 668px) {
+    .results_items {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 @media screen and (max-width: 1100px) {

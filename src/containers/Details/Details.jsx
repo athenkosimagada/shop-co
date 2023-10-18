@@ -13,7 +13,7 @@ function Details({ details, current }) {
 
   // Load cart from local storage when the component mounts
   useEffect(() => {
-    const cartFromLocalStorage = localStorage.getItem("cart");
+    const cartFromLocalStorage = localStorage.getItem("cart_items");
     if (cartFromLocalStorage) {
       const parsedCart = JSON.parse(cartFromLocalStorage);
       data.cart = parsedCart;
@@ -47,7 +47,8 @@ function Details({ details, current }) {
     } else {
       // Create a new cart item object
       const cartItem = {
-        id: data.cart.length, // Generate a unique ID for the cart item
+        id: data.cart.length,
+        clotheId: details.id,
         title: details.title,
         image: details.imgUrls[0].pic,
         size: selectedSize,
@@ -64,7 +65,7 @@ function Details({ details, current }) {
     }
 
     const cartToSave = JSON.stringify(data.cart);
-    localStorage.setItem("cart", cartToSave);
+    localStorage.setItem("cart_items", cartToSave);
     // Reset state
     setCount(1);
     setSelectedColorIndex(0);
