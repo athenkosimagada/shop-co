@@ -66,6 +66,10 @@ const Navbar = () => {
     setShowShopLinks(!showShopLinks);
   }
 
+  function handleLinkClick() {
+    setReload(true);
+  }
+
   useEffect(() => {
     if (window.innerWidth > 750) {
       const handleResize = () => {
@@ -91,13 +95,15 @@ const Navbar = () => {
     }
   }, [reload]);
 
+  // Load cart from local storage when the component mounts
   useEffect(() => {
-    setCartLength(data.cart.length);
-  }, [data.cart.length]);
-
-  function handleLinkClick() {
-    setReload(true);
-  }
+    const cartFromLocalStorage = localStorage.getItem("cart_items");
+    if (cartFromLocalStorage) {
+      const parsedCart = JSON.parse(cartFromLocalStorage);
+      data.cart = parsedCart;
+      setCartLength(data.cart.length);
+    }
+  }, []);
 
   return (
     <div className="navbar">
